@@ -223,7 +223,8 @@ const SUBJECTS = [
   {id:"obti", c:1, phase:"obt", name:"Obtención, tratamiento e integración de la información. Técnicas y herramientas de obtención", short:"Obtención"},
   {id:"ieco", c:2, phase:"all", name:"Inteligencia económica y competitiva", short:"Int. económica"},
   {id:"difu", c:2, phase:"dif", name:"Difusión, protección y comunicación de inteligencia", short:"Difusión"},
-  {id:"anal", c:2, phase:"ela", name:"Análisis. Metodología y técnicas de análisis y prospectiva", short:"Análisis"}
+  {id:"anal", c:2, phase:"ela", name:"Análisis. Metodología y técnicas de análisis y prospectiva", short:"Análisis"},
+  {id:"ieco2", c:2, phase:"ela", name:"Indicadores Económicos para el Análisis de Inteligencia", short:"Indicadores Econ."}
 ];
 
 const SESSIONS = [
@@ -367,6 +368,79 @@ const SESSIONS = [
 <tr><td>Empresa pantalla</td><td>Locales con licencias encadenadas o sociedades que comparten domicilio: Registro Mercantil, BORME, prensa</td></tr></tbody></table></div>
 `
 }
+,
+{
+  id:"ieco1", s:"ieco2", date:"2026-10-24", title:"Introducción a los indicadores económicos",
+  summary:"Los indicadores transforman fenómenos complejos en información analizable. Ningún indicador cuenta toda la historia; la interpretación conjunta aporta más que el análisis aislado.",
+  key:[
+    "<b>Definición:</b> los indicadores son instrumentos que permiten representar aspectos concretos de una realidad compleja y transformarlos en información analizable.",
+    "<b>5 preguntas del analista</b> <span class='tag exam'>Examen</span>: ¿Qué mide? ¿Cómo se calcula? ¿Quién lo elabora? ¿Qué información aporta? ¿Qué limitaciones tiene?",
+    "<b>Ningún indicador cuenta toda la historia:</b> la interpretación conjunta (económica + institucional + social) es siempre superior al análisis aislado.",
+    "<b>Indicadores son complementarios:</b> para comprender una situación se combinan perspectivas económicas, institucionales, sociales y políticas.",
+    "<b>Referencia histórica:</b> William Petty, <i>Aritmética Política</i> (1690): expresarse en términos de número, peso y medida en lugar de argumentos cualitativos.",
+    "<b>Profesora:</b> Nieves San Emeterio."
+  ],
+  body:`<h2 id="i1-1">1. ¿Por qué estudiar indicadores?</h2>
+<p>Una organización necesita comprender la realidad de un país y responder preguntas como: ¿Es una economía dinámica o estancada? ¿Existen oportunidades de negocio? ¿Son sólidas sus instituciones? ¿Ofrece un entorno favorable para la inversión? ¿Está mejorando o empeorando?</p>
+<p>Los <strong>indicadores</strong> son instrumentos que nos permiten transformar fenómenos complejos en información analizable. No podemos observar directamente conceptos como desarrollo, competitividad, calidad institucional, prosperidad o riesgo económico — usamos indicadores para aproximarlos.</p>
+<div class="keybox"><h2>5 preguntas del analista ante cualquier indicador</h2><ol><li><strong>¿Qué mide?</strong> — el PIB per cápita pretende aproximar el nivel de riqueza.</li><li><strong>¿Cómo se calcula?</strong> — la metodología influye en el resultado.</li><li><strong>¿Quién lo elabora?</strong> — organismos distintos pueden usar enfoques distintos.</li><li><strong>¿Qué información aporta?</strong> — cada indicador responde a preguntas concretas.</li><li><strong>¿Qué limitaciones tiene?</strong> — todo indicador simplifica la realidad.</li></ol></div>
+<h2 id="i1-2">2. Los indicadores son complementarios</h2>
+<p>Ningún indicador cuenta toda la historia. Para comprender una situación necesitamos combinar diferentes perspectivas: económicas, institucionales, sociales, políticas. La interpretación conjunta aporta más información que su análisis aislado.</p>`
+},
+{
+  id:"ieco2s", s:"ieco2", date:"2026-10-31", title:"Indicadores económicos: PIB, inflación, tipos de cambio",
+  summary:"Principales variables macroeconómicas: PIB nominal vs. real, índices de inflación, tipos de cambio nominales y PPA, tasa de desempleo y balanza de pagos.",
+  key:[
+    "<b>PIB nominal vs. real:</b> el nominal mide a precios corrientes; el real elimina el efecto de la inflación usando un año base. Para comparar entre países: PIB per cápita en PPA.",
+    "<b>PPA (Paridad del Poder Adquisitivo):</b> tipo de cambio que iguala el poder adquisitivo entre países. Corrige distorsiones del tipo de cambio de mercado.",
+    "<b>IPC:</b> mide la variación de precios de una cesta representativa de bienes y servicios. Otros: IPCA (armonizado UE), deflactor del PIB.",
+    "<b>Tipos de cambio:</b> nominal (precio de una moneda en otra) vs. real (ajustado por precios). Devaluación = moneda pierde valor; revaluación = gana valor. La devaluación abarata exportaciones pero encarece importaciones.",
+    "<b>Desempleo y actividad</b> <span class='tag exam'>Examen</span>: tasa de paro (parados/activos), tasa de actividad (activos/población 15–74), tasa de empleo. Estructural vs. cíclico.",
+    "<b>Deuda pública (% PIB):</b> sostenibilidad fiscal. Prima de riesgo = diferencial frente al bono alemán.",
+    "<b>Balanza de Pagos:</b> cuenta corriente (bienes, servicios, rentas, transferencias), cuenta de capital, cuenta financiera. Déficit corriente = el país consume más de lo que produce."
+  ],
+  body:`<h2 id="i2-1">1. Variables macroeconómicas principales</h2>
+<p>El <strong>PIB</strong> (Producto Interior Bruto) es el valor monetario de todos los bienes y servicios finales producidos en un país en un período. El <strong>PIB nominal</strong> se mide a precios corrientes; el <strong>PIB real</strong> elimina el efecto de la inflación usando un año base.</p>
+<p>Para comparaciones internacionales se usa el <strong>PIB per cápita en PPA</strong> (Paridad del Poder Adquisitivo), que corrige las diferencias de nivel de precios entre países.</p>
+<div class="tbl"><table><tr><th>Indicador</th><th>Qué mide</th><th>Limitación</th></tr>
+<tr><td>PIB per cápita (USD)</td><td>Riqueza media por habitante</td><td>No mide distribución ni bienestar</td></tr>
+<tr><td>Crecimiento del PIB (%)</td><td>Dinamismo económico</td><td>No dice nada de la calidad del crecimiento</td></tr>
+<tr><td>Inflación (IPC, %)</td><td>Estabilidad de precios</td><td>Cesta no siempre representativa</td></tr>
+<tr><td>Tasa de desempleo (%)</td><td>Eficiencia del mercado laboral</td><td>No captura subempleo ni economía sumergida</td></tr>
+<tr><td>Deuda pública (% PIB)</td><td>Sostenibilidad fiscal</td><td>No distingue deuda interna de externa</td></tr>
+<tr><td>Saldo cuenta corriente (% PIB)</td><td>Vulnerabilidad exterior</td><td>Puede reflejar entrada de capital productivo</td></tr></table></div>
+<h2 id="i2-2">2. Tipos de cambio</h2>
+<p><strong>Nominal:</strong> precio de una moneda en términos de otra. <strong>Real (PPA):</strong> ajustado por diferencias de precios entre países. La <strong>devaluación</strong> abarata las exportaciones pero encarece las importaciones y puede generar inflación importada. La <strong>revaluación</strong> hace el efecto contrario.</p>
+<h2 id="i2-3">3. Desempleo y balanza de pagos</h2>
+<p>La <strong>tasa de paro</strong> = parados / activos × 100. <strong>Desempleo estructural:</strong> desajuste entre cualificaciones y demanda. <strong>Desempleo cíclico:</strong> ligado al ciclo económico.</p>
+<p>El <strong>déficit por cuenta corriente</strong> indica que el país consume más de lo que produce en el exterior — genera deuda con el resto del mundo y puede provocar presiones cambiarias.</p>`
+},
+{
+  id:"ieco3s", s:"ieco2", date:"2026-11-07", title:"Indicadores de calidad institucional e índices compuestos",
+  summary:"Governance, B-Ready, IPC de Transparencia Internacional, Índice de Competitividad Global. Metodología de normalización min-max y construcción de índices compuestos ponderados.",
+  key:[
+    "<b>Governance (Banco Mundial)</b> <span class='tag exam'>Examen</span>: 6 dimensiones: voz y rendición de cuentas, estabilidad política, eficacia del gobierno, calidad regulatoria, estado de derecho, control de corrupción.",
+    "<b>B-Ready (antiguo Doing Business):</b> mide la preparación institucional para atraer inversión y facilitar actividad empresarial.",
+    "<b>IPC (Transparency International):</b> percepción de corrupción, escala 0–100; 100 = sin corrupción percibida.",
+    "<b>Instituciones formales vs. informales:</b> las formales son reglas escritas (leyes, constitución); las informales son normas culturales, prácticas no escritas.",
+    "<b>Indicadores objetivos vs. subjetivos:</b> los subjetivos (encuestas de percepción) reflejan expectativas y confianza, no solo hechos.",
+    "<b>Normalización min-max</b> <span class='tag exam'>Examen</span>: X_norm = (X – X_min) / (X_max – X_min). Para indicadores negativos (desempleo, inflación, deuda): X_inv = 1 – X_norm.",
+    "<b>Índice compuesto:</b> suma de (valor_normalizado × peso). Los pesos deben sumar 1 y reflejar la relevancia relativa de cada componente.",
+    "<b>Tarea Eurasia:</b> 5 países imaginarios, 8 indicadores (4 económicos + 4 institucionales), ponderaciones base + alternativas justificadas."
+  ],
+  body:`<h2 id="i3-1">1. Indicadores institucionales</h2>
+<p>Los indicadores de calidad institucional miden el entorno regulatorio, la corrupción, la gobernanza y la facilidad para hacer negocios. Son fundamentales para el análisis de inteligencia porque condicionan la estabilidad, el riesgo y las oportunidades de un país.</p>
+<div class="tbl"><table><tr><th>Indicador</th><th>Elabora</th><th>Escala</th><th>Qué mide</th></tr>
+<tr><td>Governance</td><td>Banco Mundial</td><td>-2,5 a +2,5</td><td>6 dimensiones de calidad institucional</td></tr>
+<tr><td>B-Ready</td><td>Banco Mundial</td><td>0–100</td><td>Entorno para hacer negocios</td></tr>
+<tr><td>IPC</td><td>Transparency Int.</td><td>0–100</td><td>Percepción de corrupción pública</td></tr>
+<tr><td>Índice Competitividad Global</td><td>WEF</td><td>0–100</td><td>Capacidad de crecimiento sostenido</td></tr>
+<tr><td>Encuesta Mundial de Valores</td><td>WVS</td><td>Subjetivo</td><td>Valores culturales y confianza institucional</td></tr></table></div>
+<h2 id="i3-2">2. Construcción de índices compuestos</h2>
+<p>Para combinar indicadores con escalas distintas se aplica la <strong>normalización min-max</strong>:</p>
+<div class="keybox"><h2>Fórmula de normalización min-max</h2><p><code>X_norm = (X – X_min) / (X_max – X_min)</code></p><p>Para <strong>indicadores negativos</strong> (donde un valor más alto es peor — desempleo, inflación, deuda): <code>X_inv = 1 – X_norm</code></p><p>El índice compuesto es la suma ponderada: <code>Índice = Σ (X_norm_i × peso_i)</code> donde los pesos suman 1.</p></div>
+<div class="note"><h3>Tarea Eurasia</h3><p>5 países imaginarios · 8 indicadores (4 económicos + 4 institucionales) · Ponderaciones base propuestas por la profesora + escenario alternativo con justificación propia.</p></div>`
+}
 ];
 
 const GLOSSARY = [
@@ -399,6 +473,21 @@ const GLOSSARY = [
  ["VUCA+H","Volatilidad, incertidumbre, complejidad y ambigüedad, más hiperconectividad.","fund1"],
  ["VULCAN","VUCA+H con pereza (Lazy) y ruido (Noisy).","fund1"],
  ["Collection challenges","Retos de obtención: qué, dónde y cuándo rara vez se conocen a la vez (known what / when / where).","fund1"]
+,
+ ["B-Ready","Indicador del Banco Mundial (antiguo Doing Business) que mide la preparación institucional para atraer inversión y facilitar actividad empresarial. Escala 0-100.","ieco1"],
+ ["Balanza de Pagos","Registro de todas las transacciones económicas entre un país y el resto del mundo: cuenta corriente, cuenta de capital y cuenta financiera.","ieco2s"],
+ ["Deflactor del PIB","Índice que mide la variación de precios del conjunto de la economía. Sirve para convertir PIB nominal en PIB real.","ieco2s"],
+ ["Devaluación","Pérdida de valor de una moneda frente a otras. Abarata las exportaciones pero encarece las importaciones y puede generar inflación importada.","ieco2s"],
+ ["Governance (Banco Mundial)","Indicador compuesto de 6 dimensiones: voz y rendición de cuentas, estabilidad política, eficacia del gobierno, calidad regulatoria, estado de derecho y control de la corrupción.","ieco3s"],
+ ["IPC (Percepción Corrupción)","Índice de Transparency International que mide la percepción de corrupción en el sector público. Escala 0 (muy corrupto) a 100 (muy limpio).","ieco3s"],
+ ["Índice de Gini","Mide la desigualdad en la distribución de renta: 0 = igualdad perfecta, 100 = desigualdad máxima.","ieco2s"],
+ ["Instituciones formales","Reglas escritas y codificadas: constitución, leyes, reglamentos. Se oponen a las instituciones informales (normas culturales, prácticas no escritas).","ieco3s"],
+ ["Normalización min-max","Técnica que transforma valores con distintas escalas a un rango 0-1: X_norm = (X – X_min) / (X_max – X_min). Para indicadores negativos se invierte: X_inv = 1 – X_norm.","ieco3s"],
+ ["PPA (Paridad del Poder Adquisitivo)","Tipo de cambio que iguala el poder adquisitivo entre países. Se usa para comparar PIB per cápita eliminando distorsiones de precios locales.","ieco2s"],
+ ["PIB nominal vs. real","El PIB nominal mide a precios corrientes del año en curso. El PIB real usa precios de un año base, eliminando el efecto de la inflación para comparar períodos.","ieco2s"],
+ ["Prima de riesgo","Diferencial entre el rendimiento del bono soberano de un país y el bono alemán (referencia de bajo riesgo). Refleja la confianza del mercado en la sostenibilidad fiscal.","ieco2s"],
+ ["Tasa de actividad","Proporción de la población en edad de trabajar (15-74 años) que está activa (trabaja o busca trabajo). Complementa a la tasa de paro.","ieco2s"],
+ ["Índice compuesto","Combinación ponderada de varios indicadores normalizados en una escala común. Permite comparar entidades (países, regiones) de forma sintética.","ieco3s"]
 ].map(([t,d,src])=>({t,d,src}));
 
 const QUESTIONS = [
@@ -417,6 +506,15 @@ const QUESTIONS = [
  {id:"f1q13",src:"fund1",q:"Diferencia inteligencia básica, estratégica y táctica.",a:"Básica: cimiento estable (fichas país, mapas), actualización lenta. Estratégica: brújula para el alto nivel, señales tempranas, largo plazo. Táctica: GPS operativo para mandos intermedios, inmediata y de valor efímero."},
  {id:"f1q14",src:"fund1",q:"¿Qué son DAFO/CAME y PESTEL y cuándo usarías cada uno?",a:"DAFO cruza debilidades y fortalezas internas con amenazas y oportunidades externas; CAME traduce eso a acciones. PESTEL barre el entorno externo por factores. PESTEL para entender el contexto; DAFO/CAME para posicionar a una organización y decidir."},
  {id:"f1q15",src:"fund1",q:"¿Cómo detectarías con OSINT una red de empresas pantalla?",a:"Registro mercantil, búsqueda de domicilios compartidos, cruce de administradores con listas de sanciones, prensa y boletines oficiales. Producto: patrón de mismos dueños, direcciones repetidas y vínculos ilícitos."}
+,
+ {id:"ie1q1",src:"ieco1",exam:true,q:"¿Cuáles son las 5 preguntas que debe hacerse un analista ante cualquier indicador?",a:"1. ¿Qué mide? 2. ¿Cómo se calcula? 3. ¿Quién lo elabora? 4. ¿Qué información aporta? 5. ¿Qué limitaciones tiene? Todo indicador simplifica la realidad y cada uno responde solo a ciertas preguntas."},
+ {id:"ie1q2",src:"ieco1",q:"¿Por qué los indicadores son complementarios y no suficientes por sí solos?",a:"Porque cada indicador muestra solo una parte de la realidad. Para comprender una situación se necesitan perspectivas económicas, institucionales, sociales y políticas combinadas. Un país puede tener PIB alto e inflación muy alta a la vez."},
+ {id:"ie2q1",src:"ieco2s",exam:true,q:"Explica la diferencia entre PIB nominal, PIB real y PIB per cápita en PPA.",a:"Nominal: mide a precios corrientes del año en curso. Real: elimina el efecto de la inflación usando precios de un año base, sirve para comparar períodos. Per cápita en PPA: divide entre la población y corrige diferencias de nivel de precios entre países; es el más útil para comparar bienestar."},
+ {id:"ie2q2",src:"ieco2s",q:"¿Qué implica un déficit por cuenta corriente elevado para el análisis de riesgo país?",a:"Implica que el país consume más de lo que produce en el exterior, generando deuda con el resto del mundo. Puede provocar presiones sobre el tipo de cambio (depreciación), dependencia de financiación foránea y vulnerabilidad ante crisis externas. Es un indicador de riesgo estructural."},
+ {id:"ie2q3",src:"ieco2s",q:"¿Qué efectos tiene una devaluación sobre la economía?",a:"Positivos: abarata las exportaciones haciéndolas más competitivas. Negativos: encarece las importaciones (materias primas, maquinaria), puede generar inflación importada, reduce el poder adquisitivo real y encarece la deuda denominada en moneda extranjera."},
+ {id:"ie3q1",src:"ieco3s",exam:true,q:"Explica la fórmula de normalización min-max y cómo se aplica a indicadores negativos.",a:"X_norm = (X – X_min) / (X_max – X_min). Transforma cualquier valor a la escala 0-1 donde 0 = el peor observado y 1 = el mejor. Para indicadores negativos (desempleo, inflación, deuda) donde mayor valor = peor situación, se invierte: X_inv = 1 – X_norm. Así todos los indicadores contribuyen positivamente al índice cuando la situación es más favorable."},
+ {id:"ie3q2",src:"ieco3s",exam:true,q:"Enumera las 6 dimensiones del indicador Governance del Banco Mundial.",a:"1. Voz y rendición de cuentas. 2. Estabilidad política y ausencia de violencia. 3. Eficacia del gobierno. 4. Calidad regulatoria. 5. Estado de derecho. 6. Control de la corrupción. Escala de -2,5 a +2,5."},
+ {id:"ie3q3",src:"ieco3s",q:"¿Cuál es la diferencia entre indicadores objetivos y subjetivos? Pon un ejemplo de cada uno.",a:"Objetivos: se basan en datos medibles y verificables. Ejemplo: tasa de desempleo (% de parados sobre activos). Subjetivos: se basan en percepciones, opiniones o encuestas. Ejemplo: IPC de Transparency International (encuesta de percepción de corrupción). Los subjetivos capturan expectativas y confianza, no solo hechos."}
 ];
 
 const READINGS = [
@@ -424,6 +522,9 @@ const READINGS = [
  {id:"r2",s:"fund",title:"Psychology of Intelligence Analysis",author:"Richards J. Heuer Jr. (CIA, 1999)",origin:"Recomendada"},
  {id:"r3",s:"fund",title:"Strategic Intelligence for American World Policy",author:"Sherman Kent (1949)",origin:"Recomendada"},
  {id:"r4",s:"fund",title:"Obra de Diego Navarro Bonilla",author:"Diego Navarro Bonilla",origin:"Recomendada"}
+,
+ {id:"r5",s:"ieco2",title:"Inteligencia e Indicadores Económicos (presentaciones)",author:"Nieves San Emeterio",origin:"Clase oct–nov 2026"},
+ {id:"r6",s:"ieco2",title:"Indicadores de Calidad Institucional (presentaciones)",author:"Nieves San Emeterio",origin:"Clase oct–nov 2026"}
 ];
 
 /* =========================================================
