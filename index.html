@@ -134,6 +134,10 @@ h2.sec{font-stretch:85%;font-weight:700;font-size:13px;letter-spacing:.08em;text
 .keybox ol{margin-bottom:0}
 .note{background:var(--exam-soft);border-radius:var(--r);padding:14px 18px;margin:14px 0}
 .note h3{margin-top:0;color:var(--exam)}
+.amp{background:color-mix(in srgb,var(--ph-ela) 9%,var(--surface));border:1px solid color-mix(in srgb,var(--ph-ela) 35%,var(--line));border-left:4px solid var(--ph-ela);border-radius:var(--r);padding:16px 20px;margin:22px 0}
+.amp h3{margin:0;color:var(--ph-ela)}
+.amp .ampsub{margin:4px 0 8px;font-size:13px;color:var(--muted)}
+.amp h4{margin:20px 0 6px;font-size:17px}
 .toc{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 18px}
 .toc a{font-family:var(--f-display);font-size:13px;text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:3px 10px;color:var(--ink);background:var(--surface)}
 .qa{border-top:1px solid var(--line);padding:10px 0}
@@ -1356,6 +1360,18 @@ const GLOSSARY = [
 ].map(([t,d,src])=>({t,d,src}));
 
 const QUESTIONS = [
+ {id:"a1",src:"fund1",q:"(Ampliación) ¿Cómo funciona el sistema 6×6 de evaluación de fuentes?",a:"Fiabilidad de la fuente de A (totalmente fiable) a F (no se puede juzgar) y credibilidad de la información de 1 (confirmada) a 6 (no se puede juzgar). Se valoran por separado: B2 = fuente normalmente fiable, información probablemente cierta."},
+ {id:"a2",src:"fund1",q:"(Ampliación) ¿Qué es el análisis de hipótesis en competencia (ACH)?",a:"Técnica de Heuer contra el sesgo de confirmación: se enumeran todas las hipótesis, se cruzan con las evidencias en una matriz y se busca lo que refuta cada una; gana la que tiene menos evidencias en contra."},
+ {id:"a3",src:"fund1",q:"(Ampliación) ¿Qué ley regula el CNI y cuál su control judicial?",a:"Ley 11/2002 (CNI) y Ley Orgánica 2/2002 (control judicial previo por un magistrado del Tribunal Supremo)."},
+ {id:"a4",src:"indi1",q:"(Ampliación) Diferencia indicadores adelantados, coincidentes y retrasados.",a:"Adelantados anticipan el ciclo (PMI, confianza, curva de tipos); coincidentes muestran el momento (PIB, afiliación); retrasados lo confirman (paro, inflación subyacente)."},
+ {id:"a5",src:"indi1",q:"(Ampliación) ¿Qué es la prima de riesgo?",a:"Diferencia entre el interés del bono a 10 años de un país y el alemán, en puntos básicos (100 pb = 1 %)."},
+ {id:"a6",src:"indi2",q:"(Ampliación) Diferencia instituciones inclusivas y extractivas.",a:"Inclusivas: propiedad segura, mercados abiertos y poder repartido; generan crecimiento sostenido. Extractivas: rentas y poder concentrados en una élite; crecimiento limitado (Acemoglu y Robinson)."},
+ {id:"a7",src:"pat4",q:"(Ampliación) ¿Qué requisitos exige la Ley 1/2019 para proteger un secreto empresarial?",a:"Que sea secreto, que tenga valor empresarial por serlo y que se hayan adoptado medidas razonables para mantenerlo en secreto."},
+ {id:"a8",src:"pat4",q:"(Ampliación) ¿Qué artículos del Código Penal protegen patentes, marcas y secretos de empresa?",a:"Art. 273 (patentes, modelos y diseños), art. 274 (marcas) y arts. 278-280 (secretos de empresa). La propiedad intelectual, arts. 270-272."},
+ {id:"a9",src:"pat5",q:"(Ampliación) ¿Qué es una familia de patentes y por qué importa al contar?",a:"Conjunto de solicitudes en varios países con la misma prioridad: una sola invención. Hay que contar familias, no documentos, para no inflar los resultados."},
+ {id:"a10",src:"pat5",q:"(Ampliación) ¿Participa España en la patente unitaria?",a:"No. El sistema de patente unitaria y Tribunal Unificado funciona desde el 1 de junio de 2023, pero España no participa: la patente europea se valida en la OEPM."},
+ {id:"a11",src:"pat6",q:"(Ampliación) ¿Qué indicadores sugieren que una patente es valiosa?",a:"Muchas citas recibidas, familia grande, reivindicaciones amplias y haber sufrido oposiciones o litigios."},
+ {id:"a12",src:"pat9",q:"(Ampliación) ¿Cuáles son los tres métodos clásicos de valoración de patentes?",a:"Coste, mercado (comparables) e ingresos (flujos futuros descontados, por ejemplo el ahorro de regalías)."},
  {id:"f1q1",src:"fund1",q:"Define inteligencia y explica por qué debe estar orientada a la acción.",a:"Información procesada, relevante para la toma de decisiones de una organización. Su razón de ser es que el decisor actúe con menos incertidumbre; si no permite actuar, es solo información."},
  {id:"f1q2",src:"fund1",exam:true,q:"Enumera y explica las tres acepciones de la inteligencia.",a:"Producto (¿qué?): el informe de inteligencia. Proceso (¿cómo?): el ciclo de inteligencia. Organización (¿quién?): el servicio de inteligencia."},
  {id:"f1q3",src:"fund1",q:"Diferencia inteligencia y contrainteligencia. ¿Por qué la contrainteligencia afecta a todo el ciclo?",a:"La inteligencia produce conocimiento para decidir; la contrainteligencia protege información, secretos y capacidades frente a espionaje, sabotaje, infiltración o desinformación. Cada fase (la necesidad, las fuentes, el análisis, el producto) puede ser atacada o filtrada."},
@@ -1449,6 +1465,284 @@ const READINGS = [
  {id:"r13",s:"pate",title:"El shock del futuro",author:"Alvin Toffler (1970)",origin:"Citada en clase"},
  {id:"r14",s:"pate",title:"Mega guía de herramientas de inteligencia artificial gratuitas",author:"Xataka",origin:"Citada en clase"}
 ];
+
+const AMPLIACIONES = {
+fund1:`
+<h4>1. Cómo expresar la probabilidad: el lenguaje estimativo</h4>
+<p>Sherman Kent (CIA) demostró en 1964 («Words of Estimative Probability») que palabras como «probable» significaban cosas muy distintas para cada lector. Desde entonces los servicios usan escalas fijas. La más citada hoy es la de la comunidad de inteligencia de EE. UU. (Directiva ICD 203):</p>
+<div class="tbl"><table><thead><tr><th>Expresión</th><th>Probabilidad</th></tr></thead><tbody>
+<tr><td>Casi ninguna posibilidad</td><td>1-5 %</td></tr><tr><td>Muy improbable</td><td>5-20 %</td></tr><tr><td>Improbable</td><td>20-45 %</td></tr><tr><td>Posibilidades parejas</td><td>45-55 %</td></tr><tr><td>Probable</td><td>55-80 %</td></tr><tr><td>Muy probable</td><td>80-95 %</td></tr><tr><td>Casi seguro</td><td>95-99 %</td></tr></tbody></table></div>
+<p>Se distingue además el <b>grado de confianza</b> (alto, medio, bajo) del analista, que depende de la calidad de las fuentes. «Es probable que X, con confianza baja» es una frase correcta: dice cuánto creemos que pasará y cuán sólido es lo que sabemos.</p>
+
+<h4>2. Evaluar fuentes e información: el sistema 6×6 (Almirantazgo / OTAN)</h4>
+<div class="tbl"><table><thead><tr><th>Fiabilidad de la fuente</th><th>Credibilidad de la información</th></tr></thead><tbody>
+<tr><td>A · Totalmente fiable</td><td>1 · Confirmada por otras fuentes</td></tr>
+<tr><td>B · Normalmente fiable</td><td>2 · Probablemente cierta</td></tr>
+<tr><td>C · Bastante fiable</td><td>3 · Posiblemente cierta</td></tr>
+<tr><td>D · Normalmente no fiable</td><td>4 · Dudosa</td></tr>
+<tr><td>E · No fiable</td><td>5 · Improbable</td></tr>
+<tr><td>F · No se puede juzgar</td><td>6 · No se puede juzgar</td></tr></tbody></table></div>
+<p>Cada dato se etiqueta con letra y número (por ejemplo, <b>B2</b>). Las dos escalas se valoran por separado: una fuente fiable puede transmitir un dato falso y viceversa. En OSINT casi todo empieza en F: la fiabilidad se construye con el historial de la fuente.</p>
+
+<h4>3. Sesgos cognitivos y cómo combatirlos</h4>
+<div class="tbl"><table><thead><tr><th>Sesgo</th><th>En qué consiste</th><th>Antídoto</th></tr></thead><tbody>
+<tr><td>Confirmación</td><td>Buscar y valorar solo lo que apoya la idea inicial</td><td>Análisis de hipótesis en competencia (ACH)</td></tr>
+<tr><td>Anclaje</td><td>Quedarse cerca de la primera cifra o juicio</td><td>Reevaluar desde cero con datos nuevos</td></tr>
+<tr><td>Imagen especular</td><td>Suponer que el adversario piensa como nosotros</td><td>Análisis del «equipo rojo»</td></tr>
+<tr><td>Disponibilidad</td><td>Sobrevalorar lo reciente o llamativo</td><td>Tasas base y datos históricos</td></tr>
+<tr><td>Pensamiento de grupo</td><td>Consenso por presión del equipo</td><td>Abogado del diablo, revisión externa</td></tr></tbody></table></div>
+<p><b>ACH en síntesis</b> (Heuer): enumerar todas las hipótesis; listar las evidencias; cruzarlas en una matriz; buscar las evidencias que <b>refutan</b>, no las que confirman; quedarse con la hipótesis con menos evidencias en contra; señalar qué indicadores harían cambiar la conclusión.</p>
+
+<h4>4. La comunidad de inteligencia en España</h4>
+<ul><li><b>CNI:</b> Ley 11/2002. Su control judicial previo (para afectar a la inviolabilidad del domicilio y el secreto de las comunicaciones) lo regula la Ley Orgánica 2/2002, a cargo de un magistrado del Tribunal Supremo.</li>
+<li><b>Directiva de Inteligencia:</b> la aprueba el Gobierno y fija los objetivos anuales del CNI. Es la «dirección» del ciclo a escala nacional.</li>
+<li><b>Otros órganos:</b> CIFAS (inteligencia militar), Jefatura de Información de la Guardia Civil, Comisaría General de Información de la Policía Nacional, CITCO (centro de inteligencia contra el terrorismo y el crimen organizado), servicios de las policías autonómicas.</li>
+<li><b>Información clasificada:</b> se rige por la Ley de Secretos Oficiales de 1968, cuya sustitución lleva años en debate.</li></ul>
+
+<h4>5. Fallos de inteligencia clásicos</h4>
+<ul><li><b>Pearl Harbor (1941):</b> había señales, pero dispersas entre organismos y ahogadas en «ruido» (Roberta Wohlstetter).</li>
+<li><b>11-S (2001):</b> la Comisión del 11-S habló de un «fallo de imaginación» y de falta de compartición entre agencias.</li>
+<li><b>Armas de destrucción masiva en Irak (2002-2003):</b> fuentes poco fiables («Curveball»), sesgo de confirmación y presión política. Ejemplo de inteligencia usada para justificar una decisión ya tomada.</li></ul>
+<p>La lección común: los fallos casi nunca son de falta de datos, sino de análisis, de difusión o de relación con el decisor.</p>
+`,
+indi1:`
+<h4>1. Las tres formas de medir el PIB</h4>
+<div class="tbl"><table><thead><tr><th>Enfoque</th><th>Qué suma</th></tr></thead><tbody>
+<tr><td>Producción (oferta)</td><td>Valor añadido de todos los sectores</td></tr>
+<tr><td>Gasto (demanda)</td><td>Consumo + Inversión + Gasto público + (Exportaciones − Importaciones)</td></tr>
+<tr><td>Rentas</td><td>Salarios + excedente de explotación + impuestos netos sobre la producción</td></tr></tbody></table></div>
+<p>En teoría los tres coinciden. El enfoque del gasto es el más útil para el analista: muestra si un país crece por consumo, por inversión, por gasto público o por exportaciones, y por tanto a qué es vulnerable.</p>
+
+<h4>2. Indicadores adelantados, coincidentes y retrasados</h4>
+<div class="tbl"><table><thead><tr><th>Tipo</th><th>Ejemplos</th><th>Uso</th></tr></thead><tbody>
+<tr><td>Adelantados</td><td>PMI (por encima de 50, expansión), confianza del consumidor, pedidos industriales, curva de tipos invertida</td><td>Anticipar un cambio de ciclo</td></tr>
+<tr><td>Coincidentes</td><td>PIB, producción industrial, afiliación a la Seguridad Social</td><td>Saber dónde estamos</td></tr>
+<tr><td>Retrasados</td><td>Tasa de paro, inflación subyacente</td><td>Confirmar lo que ya pasó</td></tr></tbody></table></div>
+<p><b>Recesión técnica:</b> dos trimestres consecutivos de caída del PIB. En inteligencia, los indicadores adelantados son los que sirven para la alerta temprana.</p>
+
+<h4>3. Referencias que conviene conocer</h4>
+<ul><li><b>Criterios de Maastricht y Pacto de Estabilidad:</b> déficit público máximo del 3 % y deuda pública de referencia del 60 % del PIB.</li>
+<li><b>Prima de riesgo:</b> diferencia entre el interés del bono a 10 años de un país y el alemán, en puntos básicos (100 pb = 1 %). Mide cuánto desconfían los mercados.</li>
+<li><b>Calificación crediticia:</b> agencias S&amp;P, Moody's y Fitch. Por debajo de BBB− (Baa3 en Moody's) la deuda es «bono basura».</li>
+<li><b>Déficit gemelos:</b> déficit público y déficit por cuenta corriente a la vez. Señal clásica de vulnerabilidad externa.</li></ul>
+
+<h4>4. Dónde buscar los datos</h4>
+<div class="tbl"><table><thead><tr><th>Fuente</th><th>Para qué</th></tr></thead><tbody>
+<tr><td>INE y Banco de España</td><td>Datos oficiales de España</td></tr>
+<tr><td>Eurostat</td><td>Comparaciones en la UE con la misma metodología</td></tr>
+<tr><td>FMI, World Economic Outlook (abril y octubre)</td><td>Previsiones y series largas de todos los países</td></tr>
+<tr><td>Banco Mundial, World Development Indicators</td><td>Desarrollo, pobreza, Gini</td></tr>
+<tr><td>OCDE</td><td>Países desarrollados, indicadores adelantados</td></tr>
+<tr><td>PNUD</td><td>IDH</td></tr></tbody></table></div>
+
+<h4>5. Plantilla de ficha país</h4>
+<ol><li>Tamaño: PIB, PIB per cápita en PPA, población.</li><li>Dinámica: crecimiento real, inflación, paro.</li><li>Equilibrio: déficit, deuda, cuenta corriente, reservas.</li><li>Distribución y desarrollo: Gini, IDH.</li><li>Riesgo: prima de riesgo, calificación, índices institucionales (módulo siguiente).</li><li>Dependencias: socios comerciales, energía, materias primas.</li><li>Valoración del analista: vulnerabilidades y escenarios.</li></ol>
+`,
+indi2:`
+<h4>1. Instituciones inclusivas y extractivas</h4>
+<p>Acemoglu y Robinson (<i>Por qué fracasan los países</i>, 2012) resumen la tesis institucionalista en dos tipos:</p>
+<div class="tbl"><table><thead><tr><th></th><th>Inclusivas</th><th>Extractivas</th></tr></thead><tbody>
+<tr><td>Económicas</td><td>Propiedad segura, mercados abiertos, igualdad de oportunidades</td><td>Rentas concentradas en una élite, monopolios, expropiación</td></tr>
+<tr><td>Políticas</td><td>Poder repartido y Estado centralizado eficaz</td><td>Poder concentrado sin contrapesos</td></tr>
+<tr><td>Resultado</td><td>Crecimiento sostenido e innovación</td><td>Crecimiento limitado o inestable</td></tr></tbody></table></div>
+<p>Ejemplo que usan: las dos Coreas, o Nogales (Arizona) frente a Nogales (Sonora), misma geografía y cultura con instituciones distintas.</p>
+
+<h4>2. Cómo leer bien los WGI</h4>
+<ul><li>Cada indicador da una <b>estimación</b> (aproximadamente de −2,5 a +2,5) y un <b>rango percentil</b> (0-100).</li>
+<li>Incluyen un <b>margen de error</b>: si los intervalos de dos países se solapan, la diferencia no es significativa. No conviene decir que un país «ha empeorado» por un cambio pequeño.</li></ul>
+
+<h4>3. Otros índices útiles para el analista</h4>
+<div class="tbl"><table><thead><tr><th>Índice</th><th>Elabora</th><th>Mide</th></tr></thead><tbody>
+<tr><td>Freedom in the World</td><td>Freedom House</td><td>Derechos políticos y libertades civiles</td></tr>
+<tr><td>V-Dem</td><td>Universidad de Gotemburgo</td><td>Calidad democrática con cientos de indicadores</td></tr>
+<tr><td>Democracy Index</td><td>Economist Intelligence Unit</td><td>Democracia plena, imperfecta, híbrida o autoritaria</td></tr>
+<tr><td>Fragile States Index</td><td>Fund for Peace</td><td>Riesgo de colapso del Estado</td></tr>
+<tr><td>Global Peace Index</td><td>Institute for Economics and Peace</td><td>Paz y conflictividad</td></tr>
+<tr><td>Clasificación de la libertad de prensa</td><td>Reporteros sin Fronteras</td><td>Libertad de los medios</td></tr>
+<tr><td>Basel AML Index</td><td>Basel Institute on Governance</td><td>Riesgo de blanqueo y financiación del terrorismo</td></tr>
+<tr><td>Listas gris y negra</td><td>GAFI/FATF</td><td>Países con deficiencias contra el blanqueo</td></tr></tbody></table></div>
+<p>Los dos últimos son especialmente útiles en investigaciones de blanqueo o de empresas pantalla: una sociedad radicada en un país de la lista gris es una señal de alerta.</p>
+
+<h4>4. Método para usar índices en un informe</h4>
+<ol><li>Usar al menos dos índices de distinta naturaleza (uno objetivo, uno subjetivo).</li><li>Citar edición y año: los datos tienen uno o dos años de retraso.</li><li>Mirar la tendencia de varios años, no un año aislado.</li><li>Indicar quién lo elabora y su sesgo conocido.</li><li>Si los índices discrepan, decirlo y explicarlo: la discrepancia también es información.</li></ol>
+`,
+pat1:`
+<h4>1. La patente como indicador adelantado</h4>
+<p>Una empresa patenta antes de lanzar un producto, y la solicitud se publica a los 18 meses. Por eso las patentes anuncian con años de antelación hacia dónde va una empresa o un país. Una oleada de solicitudes en un campo nuevo suele preceder a productos, alianzas o adquisiciones.</p>
+
+<h4>2. Inteligencia de patentes en seguridad</h4>
+<ul><li><b>Doble uso:</b> tecnologías civiles con aplicación militar (drones, cifrado, sensores, química). Su exportación está controlada por el Reglamento (UE) 2021/821.</li>
+<li><b>Transferencia de tecnología:</b> co-titularidades e inventores compartidos entre empresas occidentales y entidades vinculadas a programas militares de otros países.</li>
+<li><b>Empresas pantalla:</b> titulares con domicilios de conveniencia o sin actividad real; se cruzan con registros mercantiles.</li>
+<li><b>Capacidades de un actor:</b> qué domina un Estado o un grupo empresarial, deducido de lo que patenta.</li></ul>
+
+<h4>3. Encaje en el ciclo de inteligencia</h4>
+<div class="tbl"><table><thead><tr><th>Fase</th><th>Con patentes</th></tr></thead><tbody>
+<tr><td>Dirección</td><td>Qué tecnología, competidor o país interesa y para qué decisión</td></tr>
+<tr><td>Obtención</td><td>Búsquedas en Espacenet, Patentscope, OEPM, Google Patents, Lens</td></tr>
+<tr><td>Elaboración</td><td>Limpiar nombres de titulares, agrupar por familias, contar y cruzar</td></tr>
+<tr><td>Difusión</td><td>Mapa tecnológico, informe de competidor, alerta</td></tr></tbody></table></div>
+`,
+pat2:`
+<h4>1. El proceso de vigilancia según UNE 166006</h4>
+<p>La norma describe un ciclo muy parecido al de inteligencia: identificar necesidades y fuentes; buscar y obtener; tratar y analizar; valorar; difundir; y usar los resultados para decidir, con mejora continua. Es «certificable»: una empresa puede auditar su sistema de vigilancia.</p>
+<p>Su equivalente internacional es la <b>ISO 56006:2021</b> (gestión de la inteligencia estratégica, dentro de la familia ISO 56000 de gestión de la innovación).</p>
+
+<h4>2. Herramientas para situar una tecnología en el tiempo</h4>
+<div class="tbl"><table><thead><tr><th>Herramienta</th><th>Qué dice</th></tr></thead><tbody>
+<tr><td>Niveles TRL (1-9)</td><td>Madurez: de la idea básica (TRL 1) al sistema probado en entorno real (TRL 9). Los usa la Comisión Europea en Horizonte Europa.</td></tr>
+<tr><td>Curva en S</td><td>Rendimiento de una tecnología: arranque lento, crecimiento rápido y saturación. Cuando se satura, llega la sustituta.</td></tr>
+<tr><td>Hype cycle (Gartner)</td><td>Expectativas: pico de entusiasmo, valle de desilusión y meseta de productividad.</td></tr></tbody></table></div>
+<p>Las patentes ayudan a ubicar la tecnología: pocas solicitudes de universidades = fase temprana; muchas de empresas grandes = madurez.</p>
+
+<h4>3. Técnicas de prospectiva más usadas</h4>
+<ul><li><b>Delphi:</b> consulta a expertos en varias rondas anónimas hasta acercar posturas.</li>
+<li><b>Escenarios con dos ejes:</b> se eligen las dos incertidumbres críticas y se cruzan para obtener cuatro futuros.</li>
+<li><b>Análisis de impactos cruzados:</b> cómo un acontecimiento cambia la probabilidad de otros.</li>
+<li><b>Indicadores y señales débiles:</b> qué observar para saber hacia qué escenario vamos.</li></ul>
+`,
+pat3:`
+<h4>1. Fuentes primarias, secundarias y terciarias</h4>
+<div class="tbl"><table><thead><tr><th>Tipo</th><th>Qué es</th><th>Ejemplos</th></tr></thead><tbody>
+<tr><td>Primaria</td><td>Información original</td><td>Patente, artículo de investigación, tesis, norma, boletín oficial</td></tr>
+<tr><td>Secundaria</td><td>Analiza o resume primarias</td><td>Revisiones, informes sectoriales, prensa especializada</td></tr>
+<tr><td>Terciaria</td><td>Guía hacia las anteriores</td><td>Bases de datos, directorios, enciclopedias</td></tr></tbody></table></div>
+<p>En un informe siempre hay que intentar llegar a la fuente primaria.</p>
+
+<h4>2. Literatura gris</h4>
+<p>Documentos no publicados por editoriales comerciales: informes técnicos, tesis, actas de congresos, documentos de trabajo, informes de gobiernos y empresas. Es difícil de encontrar, pero suele ser la información más reciente y detallada, y muchas veces la que da ventaja.</p>
+
+<h4>3. Evaluar una fuente documental rápidamente</h4>
+<ul><li><b>Autoría:</b> quién lo firma y con qué conocimiento.</li><li><b>Fecha:</b> si sigue vigente.</li><li><b>Finalidad:</b> informar, vender o influir.</li><li><b>Respaldo:</b> si cita fuentes y si se pueden comprobar.</li><li><b>Corroboración:</b> si otra fuente independiente dice lo mismo.</li></ul>
+`,
+pat4:`
+<h4>1. Normativa española y europea básica</h4>
+<div class="tbl"><table><thead><tr><th>Derecho</th><th>Norma</th></tr></thead><tbody>
+<tr><td>Patentes y modelos de utilidad</td><td>Ley 24/2015, de Patentes</td></tr>
+<tr><td>Marcas y nombres comerciales</td><td>Ley 17/2001, de Marcas</td></tr>
+<tr><td>Diseño industrial</td><td>Ley 20/2003, de Protección Jurídica del Diseño Industrial</td></tr>
+<tr><td>Secretos empresariales</td><td>Ley 1/2019, de Secretos Empresariales (Directiva (UE) 2016/943)</td></tr>
+<tr><td>Propiedad intelectual</td><td>Texto refundido de la Ley de Propiedad Intelectual (RDL 1/1996)</td></tr>
+<tr><td>Marca y diseño de la UE</td><td>EUIPO (Alicante): un solo registro para toda la UE</td></tr></tbody></table></div>
+
+<h4>2. Requisitos del secreto empresarial</h4>
+<p>Para que la ley lo proteja tiene que (1) ser <b>secreto</b>, no conocido ni fácilmente accesible; (2) tener <b>valor empresarial</b> por ser secreto; y (3) haber sido objeto de <b>medidas razonables</b> para mantenerlo en secreto (acuerdos de confidencialidad, accesos restringidos). Sin medidas, no hay protección.</p>
+
+<h4>3. Vertiente penal: interesa a la policía</h4>
+<div class="tbl"><table><thead><tr><th>Delito</th><th>Código Penal</th></tr></thead><tbody>
+<tr><td>Contra la propiedad intelectual (piratería)</td><td>Arts. 270-272</td></tr>
+<tr><td>Contra patentes, modelos y diseños</td><td>Art. 273</td></tr>
+<tr><td>Contra marcas (falsificaciones)</td><td>Art. 274</td></tr>
+<tr><td>Descubrimiento y revelación de secretos de empresa</td><td>Arts. 278-280</td></tr></tbody></table></div>
+<p>La venta de falsificaciones en la vía pública, mercadillos o redes sociales es la manifestación más visible para una policía local. Las bases de marcas (TMview, OEPM) sirven para comprobar quién es el titular de la marca y a quién contactar como perjudicado.</p>
+
+<h4>4. Diseño comunitario no registrado</h4>
+<p>En la UE un diseño nuevo queda protegido <b>3 años</b> sin registro desde que se divulga, pero solo contra copias. Es muy usado en moda, donde las colecciones duran poco.</p>
+`,
+pat5:`
+<h4>1. Cómo leer una reivindicación</h4>
+<ul><li><b>Independiente:</b> define la invención en su forma más amplia. Suele tener un preámbulo (lo conocido) y una parte caracterizadora («caracterizado porque…», lo nuevo).</li>
+<li><b>Dependientes:</b> «Dispositivo según la reivindicación 1, en el que…». Añaden detalles y sirven de reserva si la independiente se anula.</li>
+<li>Regla práctica: cuantas <b>menos palabras</b> tenga la reivindicación independiente, más amplia es la protección.</li>
+<li>Para saber si un producto infringe, debe reunir <b>todos</b> los elementos de una reivindicación.</li></ul>
+
+<h4>2. Familia de patentes</h4>
+<p>Conjunto de solicitudes en distintos países que comparten la misma prioridad: es <b>una sola invención</b>. Al contar patentes hay que contar familias, no documentos, o se infla el resultado. Espacenet agrupa por familia simple (DOCDB) y extendida (INPADOC). El tamaño de la familia (en cuántos países se protege) es un indicador del valor que le da el titular, porque cada país cuesta dinero.</p>
+
+<h4>3. Patente unitaria y Tribunal Unificado de Patentes</h4>
+<p>Desde el <b>1 de junio de 2023</b> una patente europea puede tener efecto unitario en los Estados de la UE participantes, con un único tribunal. <b>España no participa</b>: en España una patente europea se sigue validando por separado ante la OEPM.</p>
+
+<h4>4. Clasificación CPC</h4>
+<p>La <b>Clasificación Cooperativa de Patentes (CPC)</b>, de la EPO y la USPTO, amplía la CIP con más de 250.000 subdivisiones. Para buscar con precisión en Espacenet conviene usar la CPC.</p>
+
+<h4>5. Búsqueda práctica en Espacenet</h4>
+<ol><li>Entrar en worldwide.espacenet.com y usar la búsqueda avanzada.</li>
+<li>Campos útiles: <code>ti</code> (título), <code>ab</code> (resumen), <code>ta</code> (título y resumen), <code>pa</code> (solicitante), <code>in</code> (inventor), <code>cpc</code> / <code>ipc</code> (clasificación), <code>pd</code> (fecha de publicación).</li>
+<li>Ejemplo: <code>ta="facial recognition" and pa="hikvision"</code>, y después acotar por fecha con los filtros de la izquierda.</li>
+<li>Abrir un resultado y revisar: datos bibliográficos, reivindicaciones, citas, familia y estado legal.</li>
+<li>Exportar la lista (CSV o XLS) para contar en una hoja de cálculo.</li>
+<li>Si salen pocos resultados, buscar por la CPC del mejor documento encontrado.</li></ol>
+
+<h4>6. Mantener la patente viva: las anualidades</h4>
+<p>A partir del tercer año el titular paga una tasa anual creciente. Si deja de pagar, la patente caduca (como en el ejemplo de clase). Para el analista, que una empresa deje caducar patentes es una señal: abandona esa línea o no le compensa.</p>
+`,
+pat6:`
+<h4>1. Indicadores avanzados</h4>
+<div class="tbl"><table><thead><tr><th>Indicador</th><th>Qué sugiere</th></tr></thead><tbody>
+<tr><td>Citas recibidas (forward citations)</td><td>Importancia: otras invenciones se apoyan en ella</td></tr>
+<tr><td>Tamaño de la familia</td><td>Valor que le da el titular y mercados que le interesan</td></tr>
+<tr><td>Número de reivindicaciones</td><td>Amplitud de la protección</td></tr>
+<tr><td>Oposiciones y litigios</td><td>Patente molesta para la competencia, luego valiosa</td></tr>
+<tr><td>Ventaja tecnológica revelada</td><td>Especialización: peso de un campo en la cartera de un país o empresa frente a la media mundial</td></tr>
+<tr><td>Redes de co-titularidad y co-invención</td><td>Alianzas, colaboraciones y movimientos de investigadores</td></tr></tbody></table></div>
+
+<h4>2. Limpieza de datos: el paso que nadie ve</h4>
+<p>El mismo titular aparece escrito de muchas formas (Samsung Electronics Co Ltd, SAMSUNG ELECTRONICS CO., LTD…). Antes de contar hay que <b>normalizar los nombres</b>, agrupar por <b>familias</b> y fijar si se cuenta por fecha de prioridad, de solicitud o de publicación. Sin esto los gráficos engañan.</p>
+
+<h4>3. Herramientas gratuitas para análisis</h4>
+<ul><li><b>Lens.org:</b> buscador gratuito de patentes y literatura científica con gráficos integrados.</li>
+<li><b>WIPO IP Statistics Data Center:</b> estadísticas por país y campo.</li>
+<li><b>Hoja de cálculo y tablas dinámicas:</b> suficiente para la mayoría de análisis de clase.</li>
+<li><b>Gephi:</b> visualizar redes de titulares e inventores.</li>
+<li>De pago: PATSTAT (EPO), Derwent (Clarivate), PatSnap, Orbit.</li></ul>
+
+<h4>4. El «patent landscape»</h4>
+<p>Es el informe tipo de inteligencia de patentes: una pregunta, una búsqueda documentada, la limpieza, gráficos de evolución, actores, países y subtemas, y conclusiones para la decisión. La OMPI publica guías y ejemplos gratuitos.</p>
+`,
+pat7:`
+<h4>1. Operadores de búsqueda que siguen funcionando</h4>
+<div class="tbl"><table><thead><tr><th>Operador (Google)</th><th>Uso</th></tr></thead><tbody>
+<tr><td><code>site:</code></td><td>Limitar a un dominio: <code>site:oepm.es</code></td></tr>
+<tr><td><code>filetype:</code></td><td>Tipo de archivo: <code>filetype:pdf</code></td></tr>
+<tr><td><code>intitle:</code> / <code>inurl:</code></td><td>Palabra en el título o en la URL</td></tr>
+<tr><td><code>"…"</code></td><td>Frase exacta</td></tr>
+<tr><td><code>-</code></td><td>Excluir un término</td></tr>
+<tr><td><code>before:</code> / <code>after:</code></td><td>Limitar por fecha</td></tr></tbody></table></div>
+
+<h4>2. Fuentes actuales que conviene añadir</h4>
+<ul><li><b>CORDIS:</b> todos los proyectos financiados por la UE, con socios y presupuesto.</li>
+<li><b>OpenAlex</b> y <b>Semantic Scholar:</b> literatura científica abierta, con autores e instituciones.</li>
+<li><b>BORME</b> e <b>Informa / Registro Mercantil:</b> administradores, cambios de domicilio, ampliaciones de capital.</li>
+<li><b>OpenCorporates:</b> registros mercantiles de muchos países.</li>
+<li><b>Wayback Machine (archive.org):</b> versiones antiguas de una web.</li></ul>
+
+<h4>3. Preservar la evidencia</h4>
+<p>Si lo encontrado puede llegar a un procedimiento: captura completa con URL y fecha, cálculo del hash (SHA-256) del archivo y registro de la búsqueda. Así se puede demostrar después que la información estaba publicada en ese momento y que la captura no se ha alterado.</p>
+`,
+pat8:`
+<h4>1. Cómo pedirle bien las cosas a una IA</h4>
+<ul><li><b>Contexto:</b> quién eres, para qué es y quién lo leerá.</li><li><b>Tarea concreta</b> y <b>formato</b> de salida (tabla, lista, extensión).</li><li><b>Material propio:</b> pegar o adjuntar los documentos y pedir que responda solo con ellos.</li><li><b>Pedir fuentes</b> y comprobarlas una a una.</li><li><b>Iterar:</b> corregir y pedir otra versión.</li></ul>
+
+<h4>2. Alucinaciones</h4>
+<p>Los modelos de lenguaje generan texto plausible, no necesariamente cierto: pueden inventar citas, cifras, patentes o sentencias. Por eso conviene usar herramientas que trabajen sobre documentos propios o citen fuentes (Perplexity, NotebookLM) y verificar siempre en la fuente original.</p>
+
+<h4>3. Reglamento europeo de IA</h4>
+<p>El Reglamento (UE) 2024/1689 clasifica los sistemas por riesgo:</p>
+<ul><li><b>Prohibidos:</b> puntuación social, manipulación, y la identificación biométrica remota «en tiempo real» en espacios públicos con fines policiales, salvo excepciones tasadas.</li>
+<li><b>Alto riesgo:</b> incluye muchos usos policiales y judiciales; exigen evaluación, supervisión humana y registro.</li>
+<li><b>Transparencia:</b> hay que advertir del contenido generado con IA (por ejemplo, las ultrafalsificaciones).</li></ul>
+
+<h4>4. Contenido sintético en investigaciones OSINT</h4>
+<p>Imágenes, audios y vídeos generados con IA son ya habituales en desinformación y fraude. Antes de dar por buena una imagen: buscar su origen (búsqueda inversa), revisar metadatos, buscar incoherencias (manos, textos, sombras) y contrastar con otras fuentes.</p>
+`,
+pat9:`
+<h4>1. Los tres métodos clásicos de valoración</h4>
+<div class="tbl"><table><thead><tr><th>Método</th><th>Idea</th><th>Limitación</th></tr></thead><tbody>
+<tr><td>Coste</td><td>Lo que costó desarrollarla o lo que costaría reproducirla</td><td>El coste no dice nada del valor de mercado</td></tr>
+<tr><td>Mercado</td><td>Precio de patentes o licencias comparables</td><td>Casi nunca hay comparables públicos</td></tr>
+<tr><td>Ingresos</td><td>Flujos futuros descontados (VAN), por ejemplo el método del «ahorro de regalías»: lo que el titular se ahorra por no tener que licenciarla</td><td>Depende de previsiones y de la tasa elegida</td></tr></tbody></table></div>
+<p>IP Score combina una valoración cualitativa (los radares) con una del tipo ingresos.</p>
+
+<h4>2. Por qué la tasa de descuento es tan alta</h4>
+<p>La tasa con la que se descuentan los flujos suma la tasa libre de riesgo (deuda pública) y una prima por el riesgo del proyecto. Una tecnología que aún no está en el mercado puede justificar tasas del 20-40 %. Cuanto mayor la tasa, menor el valor actual.</p>
+
+<h4>3. El orden de magnitud correcto del ejemplo</h4>
+<p>Con los datos de la diapositiva (ventas del mercado de 230 millones, beneficio del 8,36 %, crecimiento del 2,38 %, entrada en 2023, 8 años de vida y una tasa del 30 %), el valor actual en 2018 de <b>todo</b> el beneficio del mercado durante esos 8 años sale en torno a <b>23 millones</b>. Por eso la cifra de 6.960 millones no puede ser correcta, mientras que el valor esperado para la tecnología (8,7 millones) es coherente con ese orden de magnitud.</p>
+
+<h4>4. Usos de la valoración</h4>
+<ul><li>Negociar una licencia o una venta.</li><li>Aportar la patente como capital a una empresa o garantía de un préstamo.</li><li>Decidir qué patentes mantener (y pagar anualidades) y cuáles abandonar.</li><li>Calcular daños en un litigio por infracción.</li></ul>
+`
+};
 
 /* =========================================================
    ESTADO Y SINCRONIZACIÓN
@@ -1621,8 +1915,9 @@ function vSession(x){
   <p class="lede" style="font-family:var(--f-body);font-size:17px">${x.summary}</p>
   <div class="article">
     <div class="keybox"><h2>Ideas clave</h2><ol>${x.key.map(k=>`<li>${k}</li>`).join("")}</ol></div>
-    <nav class="toc" aria-label="Apartados">${heads.map(([id,t])=>`<a href="#${id}" data-anchor="${id}">${esc(t)}</a>`).join("")}${x.body.includes('id="acl"')?'<a href="#acl" data-anchor="acl">Aclaraciones</a>':""}<a href="#preg" data-anchor="preg">Preguntas</a></nav>
+    <nav class="toc" aria-label="Apartados">${heads.map(([id,t])=>`<a href="#${id}" data-anchor="${id}">${esc(t)}</a>`).join("")}${x.body.includes('id="acl"')?'<a href="#acl" data-anchor="acl">Aclaraciones</a>':""}${AMPLIACIONES[x.id]?'<a href="#amp" data-anchor="amp">Ampliación</a>':""}<a href="#preg" data-anchor="preg">Preguntas</a></nav>
     ${x.body}
+    ${AMPLIACIONES[x.id]?`<section class="amp" id="amp"><h3>Ampliación</h3><p class="ampsub">Contenido añadido para completar la clase; no estaba en las diapositivas.</p>${AMPLIACIONES[x.id]}</section>`:""}
     <h2 id="preg">Preguntas de repaso</h2>
     ${qs.map(q=>`<details class="qa"><summary>${q.exam?'<span class="tag exam">Examen</span> ':""}${esc(q.q)}</summary><div>${esc(q.a)}</div></details>`).join("")}
     <p style="margin-top:20px"><button class="btn primary" data-study="${x.id}">Repasar esta clase con tarjetas</button></p>
