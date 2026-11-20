@@ -1,10 +1,6 @@
-<!doctype html>
-<html lang="es">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#17625B">
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Temario Máster Inteligencia URJC</title>
+<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400&family=JetBrains+Mono:wght@400;600&display=swap">
@@ -103,6 +99,8 @@ h2.sec{font-stretch:85%;font-weight:700;font-size:13px;letter-spacing:.08em;text
 .phaserow{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;font-family:var(--f-mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:24px}
 .phaserow span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
+.mod{border-left:3px solid var(--phc);padding:10px 0 4px 12px;margin-top:6px;display:flex;flex-direction:column;gap:8px}
+.mod h4{margin:0;font-size:16px;line-height:1.3}
 .subj{display:flex;flex-direction:column;gap:10px;border-left:4px solid var(--phc,var(--line))}
 .subj h3{margin:0;font-stretch:85%;font-weight:700;font-size:18px;line-height:1.2;text-wrap:balance}
 .subj .meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--muted)}
@@ -188,9 +186,6 @@ h2.sec{font-stretch:85%;font-weight:700;font-size:13px;letter-spacing:.08em;text
 @media (prefers-reduced-motion:no-preference){.card,.panel{transition:border-color .15s}}
 </style>
 
-<style>html,body{height:100%}body{margin:0;-webkit-text-size-adjust:100%}img{max-width:100%}[hidden]{display:none!important}</style>
-</head>
-<body>
 <div class="shell">
   <aside class="rail">
     <p class="brand">Máster en Análisis de Inteligencia<small>URJC · curso 2026–27</small></p>
@@ -219,10 +214,13 @@ const PHASES = {
 };
 
 const SUBJECTS = [
-  {id:"fund", c:1, phase:"all", name:"Fundamentos de Inteligencia", short:"Fundamentos"},
+  {id:"fund", c:1, phase:"all", grp:"Fundamentos de Inteligencia", mod:"Módulo I", name:"Introducción a la Inteligencia", short:"Introducción"},
+  {id:"etic", c:1, phase:"all", grp:"Fundamentos de Inteligencia", mod:"Módulo II", name:"Ética y deontología profesional", short:"Ética"},
+  {id:"indi", c:1, phase:"bas", grp:"Fundamentos de Inteligencia", mod:"Módulo III", name:"Indicadores económicos para el Análisis de Inteligencia", short:"Indicadores"},
+  {id:"tjue", c:1, phase:"ela", grp:"Fundamentos de Inteligencia", mod:"Módulo IV", name:"Inteligencia, incertidumbre y decisión: aplicaciones de la teoría de juegos al Análisis de Inteligencia", short:"Teoría de juegos"},
+  {id:"pate", c:1, phase:"obt", grp:"Fundamentos de Inteligencia", mod:"Módulo V", name:"Inteligencia de Fuentes Abiertas: Inteligencia de Patentes", short:"Patentes"},
   {id:"dirp", c:1, phase:"dir", name:"Dirección y planeamiento", short:"Dirección"},
   {id:"obti", c:1, phase:"obt", name:"Obtención, tratamiento e integración de la información. Técnicas y herramientas de obtención", short:"Obtención"},
-  {id:"indi", c:1, phase:"bas", name:"Indicadores económicos para el análisis de inteligencia", short:"Indicadores"},
   {id:"ieco", c:2, phase:"all", name:"Inteligencia económica y competitiva", short:"Int. económica"},
   {id:"difu", c:2, phase:"dif", name:"Difusión, protección y comunicación de inteligencia", short:"Difusión"},
   {id:"anal", c:2, phase:"ela", name:"Análisis. Metodología y técnicas de análisis y prospectiva", short:"Análisis"}
@@ -678,6 +676,565 @@ const SESSIONS = [
 <tr><td>Sesgo de los índices</td><td>Antes de citar un ranking en un informe, anota quién lo elabora y su sesgo conocido: es la fiabilidad de la fuente</td></tr>
 <tr><td>Doing Business manipulado</td><td>Ejemplo real de desinformación institucional: una fuente fiable deja de serlo; triangula siempre</td></tr></tbody></table></div>
 `
+},
+{
+  id:"pat1", s:"pate", date:"2026-11-20", title:"Objetivos y relación entre propiedad industrial e inteligencia",
+  summary:"Lo que una empresa protege revela qué investiga, con quién y dónde quiere vender: la propiedad industrial es una fuente abierta, oficial y lícita de primer orden para la inteligencia.",
+  key:[
+    "<b>Profesor:</b> Sergio Larreina García, director de Consultoría Estratégica (Isern Patentes y Marcas).",
+    "<b>Objetivo final de la asignatura:</b> situar el contexto tecnológico y de mercado de una empresa, identificar riesgos y oportunidades y definir estrategias de competitividad.",
+    "<b>Inteligencia aplicada a la propiedad industrial:</b> obtener información de cualquier territorio, lícita, de fuentes oficiales y contrastada.",
+    "<b>Por nivel de decisión:</b> estratégica (política general), operativa (ejecución), táctica (acciones concretas) y prospectiva (anticipación).",
+    "<b>Por necesidad de información:</b> básica, actual y crítica.",
+    "<b>Por materia:</b> geográfica, política, sociológica, militar, científica y tecnológica, económica, competitiva, criminal, sanitaria, psicológica, sociocultural y cultural.",
+    "<b>Inteligencia holística:</b> la que integra todas las materias en una sola visión."
+  ],
+  body:`
+<h2 id="s1">1. Objetivos de la asignatura</h2>
+<p>La asignatura se titula, en las diapositivas, <b>Propiedad industrial e intelectual. Vigilancia tecnológica e inteligencia competitiva</b>. Recorre este camino:</p>
+<ol>
+<li>Relación de la propiedad industrial con la inteligencia.</li>
+<li>Conocer la propiedad industrial e intelectual: qué es y para qué sirve.</li>
+<li>Aplicar la propiedad industrial a la búsqueda y tratamiento de la información.</li>
+<li>Identificar tipologías de información.</li>
+<li>Conocer herramientas adecuadas para buscar y analizar cada tipología.</li>
+<li>Qué es la inteligencia competitiva y la vigilancia tecnológica.</li>
+<li>Técnicas de vigilancia e inteligencia.</li>
+<li>Aplicar las herramientas de búsqueda y de inteligencia en una empresa.</li>
+<li>Construir un informe de inteligencia con esas técnicas de análisis.</li>
+</ol>
+<p>El resultado que se busca para la empresa analizada tiene tres partes:</p>
+<div class="tbl"><table><thead><tr><th>Objetivo</th><th>Pregunta que responde</th></tr></thead><tbody>
+<tr><td>Situación del contexto tecnológico y de mercado</td><td>¿Dónde está la empresa respecto a su tecnología y a su mercado?</td></tr>
+<tr><td>Identificación de riesgos y oportunidades</td><td>¿Qué puede perjudicarla y qué puede aprovechar?</td></tr>
+<tr><td>Definición de estrategias de competitividad</td><td>¿Qué debe hacer?</td></tr></tbody></table></div>
+
+<h2 id="s2">2. Por qué la propiedad industrial interesa al analista</h2>
+<p>Para el profesor, la inteligencia consiste en <b>obtener información</b> con tres condiciones:</p>
+<ul><li>De <b>todo tipo de territorio</b>: las patentes y las marcas se publican en todo el mundo.</li>
+<li>De carácter <b>lícito</b> y de <b>fuentes oficiales</b>: las oficinas de patentes publican los documentos.</li>
+<li><b>Contrastada</b>.</li></ul>
+<p>Una patente obliga a su titular a describir la invención para que un experto pueda reproducirla. A cambio recibe un monopolio temporal. Por eso los registros de propiedad industrial son una fuente abierta muy valiosa: muestran qué investiga cada empresa, quién inventa, con quién coopera y en qué países quiere proteger (es decir, vender).</p>
+
+<h2 id="s3">3. Clasificación de la inteligencia</h2>
+<p>La diapositiva presenta dos clasificaciones en paralelo:</p>
+<div class="tbl"><table><thead><tr><th>Según el nivel de decisión</th><th>Para qué</th><th>Según la necesidad de información</th></tr></thead><tbody>
+<tr><td>Estratégica</td><td>Política general</td><td>Básica</td></tr>
+<tr><td>Operativa</td><td>Ejecución</td><td>Actual</td></tr>
+<tr><td>Táctica</td><td>Acciones concretas</td><td>Crítica</td></tr>
+<tr><td>Prospectiva</td><td>Anticipación</td><td>—</td></tr></tbody></table></div>
+<p>La inteligencia <b>básica</b> es el conocimiento de fondo, relativamente estable; la <b>actual</b> sigue lo que está pasando; la <b>crítica</b> responde a una necesidad urgente que exige decisión inmediata.</p>
+
+<h2 id="s4">4. Tipos de fuentes de información</h2>
+<div class="tbl"><table><thead><tr><th>Por su elaboración</th><th>Por su contenido</th></tr></thead><tbody>
+<tr><td>Primarias, secundarias y terciarias</td><td>Institucionales, económicas, geopolíticas, sociológicas</td></tr>
+<tr><td>Obras de referencia</td><td>De seguridad y defensa, bibliográficas, de prensa</td></tr>
+<tr><td>Archivísticas</td><td>Redes sociales y páginas web</td></tr></tbody></table></div>
+
+<h2 id="s5">5. La inteligencia según la materia</h2>
+<p>Doce campos del conocimiento: geográfica, política, sociológica, militar, científica y tecnológica, económica, competitiva, criminal, sanitaria, psicológica, sociocultural y cultural. Esta asignatura se mueve sobre todo en la <b>científica y tecnológica</b>, la <b>económica</b> y la <b>competitiva</b>.</p>
+<p>La suma de todas da la <b>inteligencia holística</b>: una visión integrada en la que ningún campo se analiza aislado.</p>
+
+<div class="note" id="acl"><h3>Aclaraciones sobre las diapositivas</h3><ul>
+<li>En la lista de objetivos el número 6 aparece dos veces. Aquí se han numerado seguidos.</li>
+<li>La diapositiva coloca «nivel de decisión» y «necesidad de información» una al lado de la otra. Son dos clasificaciones distintas, no parejas fijas: la correspondencia fila a fila es orientativa.</li>
+<li>El apartado 2 (por qué interesa al analista) desarrolla lo que en la diapositiva son tres viñetas.</li></ul></div>
+`
+},
+{
+  id:"pat2", s:"pate", date:"2026-11-20", title:"Evolución de las técnicas: del conocimiento a la inteligencia artificial",
+  summary:"Datos, información y conocimiento no son lo mismo. Las técnicas de vigilancia e inteligencia han evolucionado para convertir grandes volúmenes de datos en conocimiento útil para decidir.",
+  key:[
+    "<b>Pirámide:</b> datos → información → conocimiento → sabiduría → verdad. Acumular un nivel no da el siguiente.",
+    "<b>Gestión del conocimiento:</b> convertir el conocimiento tácito (en las personas) en explícito (documentado y accesible).",
+    "<b>Vigilancia tecnológica:</b> búsqueda, tratamiento, análisis y difusión sistemáticos de información legal útil para decidir.",
+    "<b>Inteligencia competitiva (norma UNE 166006):</b> añade análisis, interpretación y comunicación de información estratégica sobre el entorno, los competidores y la propia organización.",
+    "<b>Business Intelligence:</b> análisis de los datos internos de la empresa.",
+    "<b>Minería de datos (KDD), de textos y web:</b> extraer patrones ocultos de grandes volúmenes de datos.",
+    "<b>Big Data:</b> volumen, variabilidad y velocidad que desbordan las herramientas convencionales.",
+    "<b>Prospectiva y escenarios:</b> varios futuros distintos y plausibles para encontrar una estrategia robusta.",
+    "<b>IA débil</b> (la única que existe, tareas concretas) frente a <b>IA general</b>."
+  ],
+  body:`
+<h2 id="s1">1. Reflexión inicial: de los datos a la verdad</h2>
+<p>La clase arranca con esta cadena:</p>
+<ul><li>Una colección de datos no es información.</li><li>Una colección de información no es conocimiento.</li><li>Una colección de conocimiento no es sabiduría.</li><li>Una colección de sabiduría no es la verdad.</li></ul>
+<p>La idea para el analista: <b>acumular no es analizar</b>. Cada salto de nivel exige procesar, relacionar e interpretar.</p>
+
+<h2 id="s2">2. Gestión del conocimiento</h2>
+<p>Conjunto de actividades para utilizar, compartir, desarrollar y administrar los conocimientos de una organización y de sus personas. La clave es transformar el <b>conocimiento tácito</b> (el que tiene cada persona en la cabeza) en <b>explícito</b>: documentado y almacenado para que cualquiera pueda usarlo cuando lo necesite.</p>
+
+<h2 id="s3">3. Vigilancia tecnológica, inteligencia competitiva y Business Intelligence</h2>
+<div class="tbl"><table><thead><tr><th>Concepto</th><th>Qué es</th><th>Mira hacia</th></tr></thead><tbody>
+<tr><td><b>Vigilancia tecnológica</b></td><td>Acciones sistemáticas y coordinadas de búsqueda, tratamiento, análisis y difusión de toda información (legal) útil para decidir y definir la estrategia</td><td>Fuera: tecnología</td></tr>
+<tr><td><b>Inteligencia competitiva</b> (UNE 166006)</td><td>Además, analiza, interpreta y comunica información de valor estratégico sobre el entorno de negocio, los competidores y la propia organización, para ajustar el rumbo</td><td>Fuera y dentro: negocio y competencia</td></tr>
+<tr><td><b>Business Intelligence (BI)</b></td><td>Análisis de los datos de la empresa para extraer conocimiento: bases de datos de clientes, previsión de ventas y devoluciones, compartir información entre departamentos, mejorar el servicio</td><td>Dentro: datos propios</td></tr></tbody></table></div>
+<p>La diferencia clave: la vigilancia <b>detecta y recoge</b>; la inteligencia competitiva <b>interpreta y comunica</b> para que alguien decida.</p>
+
+<h2 id="s4">4. Técnicas de minería y tratamiento masivo de datos</h2>
+<div class="tbl"><table><thead><tr><th>Técnica</th><th>Definición</th></tr></thead><tbody>
+<tr><td>Minería de datos (<i>data mining</i>)</td><td>Parte del proceso KDD (<i>Knowledge Discovery in Databases</i>). «Extracción no trivial de información implícita, desconocida previamente y potencialmente útil» de grandes bases de datos</td></tr>
+<tr><td>Minería de textos</td><td>Aplica los métodos de la minería de datos a textos para encontrar, clasificar y detectar patrones en grandes volúmenes de documentos</td></tr>
+<tr><td>Minería web</td><td>Extrae información del contenido de las páginas, de su estructura de enlaces y de los registros de navegación de los usuarios</td></tr>
+<tr><td>Big Data</td><td>Conjuntos de datos cuyo <b>volumen</b>, complejidad (<b>variabilidad</b>) y <b>velocidad</b> de crecimiento impiden tratarlos con herramientas convencionales a tiempo para que sean útiles</td></tr>
+<tr><td>Ciencia de datos</td><td>Campo interdisciplinar (estadística, análisis de datos, aprendizaje automático, informática) para extraer conocimiento de datos estructurados y no estructurados</td></tr></tbody></table></div>
+
+<h2 id="s5">5. Prospectiva y planificación de escenarios</h2>
+<p>La prospectiva en la empresa se hace dos preguntas: <b>¿qué cambiará y qué no?</b> y <b>¿cómo analizarlo y extraer consecuencias?</b></p>
+<p>Los escenarios se construyen <b>en plural</b> y claramente distintos entre sí. Cada uno es una historia sobre un futuro probable en el que habría que vivir o trabajar. Sirven para encontrar una <b>estrategia robusta</b>, que funcione en varios de ellos. Suelen girar sobre:</p>
+<ul><li>Dinámica social (demografía, estilo de vida…).</li><li>Dinámica económica (macro y microeconomía).</li><li>Temas políticos (elecciones, legislación).</li><li>Temas tecnológicos.</li></ul>
+
+<h2 id="s6">6. Inteligencia artificial</h2>
+<p>Disciplina y conjunto de capacidades expresadas por sistemas informáticos o algoritmos cuyo propósito es imitar la inteligencia humana para realizar tareas, y que mejoran a medida que recopilan información.</p>
+<ul><li><b>IA débil:</b> la única que existe hoy; resuelve tareas específicas.</li><li><b>IA general:</b> la que tendría capacidades generales comparables o superiores a las humanas.</li></ul>
+
+<div class="note" id="acl"><h3>Aclaraciones sobre las diapositivas</h3><ul>
+<li>La cita inicial se atribuye en clase a Alvin Toffler, «miembro de <i>future shoes</i>»: se refiere a su libro <i>Future Shock</i> (<i>El shock del futuro</i>, 1970). La frase circula atribuida a varios autores.</li>
+<li>La diapositiva fecha la norma de inteligencia competitiva como «UNE 166.006:2015». Las versiones publicadas de la UNE 166006 que se conocen son las de 2011 y 2018; conviene confirmar con el profesor cuál cita.</li>
+<li>La diapositiva define la IA general como la que «excediese» las capacidades humanas. Lo habitual es definirla como la que las iguala en cualquier tarea; la que las supera se suele llamar superinteligencia.</li></ul></div>
+`
+},
+{
+  id:"pat3", s:"pate", date:"2026-11-20", title:"Tipología de la información",
+  summary:"Un dato aislado no dice nada; con contexto se convierte en información. Para vigilar una tecnología hay que saber qué tipos de documento existen y qué revela cada uno.",
+  key:[
+    "<b>Dato:</b> representación simbólica de un atributo. Sin tratamiento no tiene sentido; es la expresión mínima de contenido.",
+    "<b>Información:</b> conjunto organizado de datos procesados que forma un mensaje y permite producir conocimiento para decidir.",
+    "<b>Tipos de información para vigilancia:</b> patentes, otras formas de propiedad industrial, proyectos europeos, monografías, artículos, tesis, conferencias, información de mercado, estadística, normativa y legislación.",
+    "<b>Otras formas de propiedad industrial:</b> marcas, diseños industriales, propiedad intelectual y software. Para marcas: TMview.",
+    "<b>Qué se puede extraer:</b> tecnologías emergentes y en declive, transferencias tecnológicas, qué hace la competencia y con quién coopera, investigadores clave, evolución de la I+D, mercados, nichos y países líderes."
+  ],
+  body:`
+<h2 id="s1">1. Dato e información</h2>
+<p><b>Dato:</b> representación simbólica (numérica, alfabética, algorítmica…) de un atributo o característica de una entidad. No tiene sentido por sí mismo, pero tratado adecuadamente sirve para calcular o decidir. Es la expresión mínima de contenido sobre un tema.</p>
+<p>En clase se ilustró con datos sueltos, como «1922» o «Hanga Roa». Solos no dicen nada; con contexto (una fotografía de una excavación, un lugar en la isla de Pascua) empiezan a significar algo.</p>
+<p><b>Información:</b> conjunto organizado de datos procesados que constituye un mensaje sobre un ente o fenómeno. Los datos se perciben, se integran y generan la información necesaria para producir el conocimiento que permite decidir. A diferencia de los datos, la información tiene una estructura útil que modifica cómo actúa quien la posee.</p>
+
+<h2 id="s2">2. Tipos de información para la vigilancia</h2>
+<div class="tbl"><table><thead><tr><th>Tipo</th><th>Qué revela</th><th>Dónde buscar (ver clase de herramientas)</th></tr></thead><tbody>
+<tr><td>Patentes</td><td>Qué investiga cada empresa, quién inventa, en qué países protege</td><td>OEPM, Espacenet, Google Patents, Patentscope</td></tr>
+<tr><td>Otras formas de propiedad industrial</td><td>Marcas, diseños industriales, propiedad intelectual, software</td><td>TMview (marcas), oficinas de PI</td></tr>
+<tr><td>Proyectos europeos</td><td>Quién investiga qué con financiación pública y con qué socios</td><td>Comisión Europea, CDTI</td></tr>
+<tr><td>Monografías, artículos, tesis y conferencias</td><td>Investigación académica, a menudo años antes del producto</td><td>Google Scholar, Dialnet, ScienceDirect, TESEO</td></tr>
+<tr><td>Información de mercado</td><td>Tamaño, actores, tendencias</td><td>ICEX, prensa económica, Google Trends</td></tr>
+<tr><td>Información estadística</td><td>Datos agregados por sector o país</td><td>Eurostat, institutos de estadística</td></tr>
+<tr><td>Normativa y legislación</td><td>Requisitos y barreras de entrada</td><td>ISO, UNE (antes AENOR)</td></tr></tbody></table></div>
+
+<h2 id="s3">3. Qué información se puede extraer</h2>
+<ul>
+<li>Tecnologías emergentes y en declive.</li>
+<li>Qué tecnologías se están transfiriendo a nuevas áreas o productos.</li>
+<li>Qué hace la competencia y con quién coopera.</li>
+<li>Quiénes son los principales investigadores en una tecnología.</li>
+<li>Evolución de la I+D de los competidores.</li>
+<li>Principales mercados de una tecnología y nuevos nichos.</li>
+<li>Países líderes en una tecnología.</li>
+<li>Indicadores económicos y sociales.</li></ul>
+
+<div class="note" id="acl"><h3>Aclaraciones sobre las diapositivas</h3><ul>
+<li>Muchas diapositivas de esta parte son capturas de ejemplos (una patente, proyectos europeos, una tesis…) sin texto. La columna «Dónde buscar» de la tabla relaciona cada tipo con las herramientas que se ven en la clase de fuentes de información.</li>
+<li>El ejemplo de los datos sueltos (8027, 1922, Hanga Roa) son imágenes sin explicación escrita; aquí se resume la idea que ilustran.</li></ul></div>
+`
+},
+{
+  id:"pat4", s:"pate", date:"2026-11-20", title:"Estrategia de protección: derechos de propiedad industrial e intelectual",
+  summary:"Proteger es una decisión estratégica: hay que saber qué se protege, para qué y con qué recursos. Cada derecho protege una cosa distinta, con requisitos y duración propios.",
+  key:[
+    "<b>Equilibrio:</b> la economía, la cultura y la tecnología dependen del equilibrio entre lo protegido y el dominio público.",
+    "<b>Por qué proteger:</b> para ganar dinero (valor añadido, explotación, licencias, prestigio, marketing, subvenciones, monopolio y disuasión).",
+    "<b>Antes de proteger:</b> qué, para qué, con qué recursos y qué hace falta realmente.",
+    "<b>Intangibles:</b> recursos inmateriales con valor porque dan ventaja en el mercado (marcas, patentes, software, secretos, dominios…).",
+    "<b>Patentes y modelos:</b> invenciones nuevas, con altura inventiva y aplicación industrial; territoriales; 20 años (modelos, 10); sin garantía del Estado.",
+    "<b>Diseños:</b> forma externa; 5 años renovables hasta 25. <b>Marcas:</b> 10 años renovables indefinidamente.",
+    "<b>Copyright:</b> creaciones artísticas, 70 años. <b>Variedades vegetales:</b> 25 o 30 años. <b>Secretos:</b> mientras no se revelen.",
+    "<b>Antes de patentar:</b> búsqueda de anterioridades, análisis de mercado y competencia, patentabilidad e informe de libertad de operación (FTO)."
+  ],
+  body:`
+<h2 id="s1">1. ¿Por qué proteger?</h2>
+<p>«Nuestra economía, la cultura y la tecnología dependen de un delicado equilibrio entre lo que está y no está protegido por derechos de propiedad intelectual. Tanto los incentivos de la protección como la libertad del dominio público son cruciales» (Centro para el Estudio del Dominio Público, 2015).</p>
+<p>El profesor lo resume en una frase: «Si no sabes hacia dónde vas, cualquier camino te puede llevar ahí». La protección necesita una estrategia.</p>
+<p><b>Para ganar dinero</b>, por estas vías:</p>
+<ul><li>Innovación: valor añadido.</li><li>Ingresos por explotación propia.</li><li>Ingresos por cesión o licencia.</li><li>Prestigio e imagen.</li><li>Marketing (<i>patent pending</i>).</li><li>Subvenciones.</li><li>Monopolio en el mercado y defensa.</li><li>Disuasión: una patente puede bastar para que otros no entren.</li></ul>
+<p><b>Preguntas previas:</b> ¿qué se va a proteger? ¿Para qué, con qué objetivo? ¿Con qué recursos? ¿Qué me hace falta en realidad?</p>
+
+<h2 id="s2">2. Activos intangibles</h2>
+<p>Recursos inmateriales y derechos con valor para la empresa porque le dan ventaja en el mercado: fondo de comercio, copyright, marcas, patentes, programas de ordenador, modelos de utilidad, secretos comerciales, diseños, variedades vegetales, nombres de dominio, valores financieros…</p>
+<div class="tbl"><table><thead><tr><th>Relacionados con</th><th>Ejemplos</th></tr></thead><tbody>
+<tr><td>El marketing</td><td>Marcas, nombres comerciales, nombres de dominio</td></tr>
+<tr><td>El cliente</td><td>Listas de clientes, contratos, relaciones</td></tr>
+<tr><td>La creatividad y el arte</td><td>Libros, obras de teatro y ópera, películas, música, fotografías</td></tr>
+<tr><td>Un contrato</td><td>Licencias, royalties, acuerdos, publicidad, suministros</td></tr>
+<tr><td>La tecnología</td><td>Patentes, bases de datos, fórmulas, procesos</td></tr></tbody></table></div>
+<p>Hay además <b>conocimiento implícito</b> (experiencia, capacidades, logros) y <b>variables no medibles</b> (datos, reputación, confianza).</p>
+<p><b>Ejemplo histórico:</b> el cristal veneciano (<i>cristallo</i> de Barovier, Murano). El gremio de vidrieros lo protegió combinando contratos, secretos, <i>know-how</i>, libros de horno, familias, patentes, diseños y marcas. La protección eficaz casi nunca depende de un solo derecho.</p>
+
+<h2 id="s3">3. Los derechos de propiedad industrial e intelectual</h2>
+<div class="tbl"><table><thead><tr><th>Derecho</th><th>Protege</th><th>Requisitos</th><th>Duración</th></tr></thead><tbody>
+<tr><td>Patentes y modelos de utilidad</td><td>Nuevas invenciones</td><td>Novedad, altura inventiva, aplicación industrial</td><td>20 años (modelos, 10)</td></tr>
+<tr><td>Diseños</td><td>Forma externa, apariencia</td><td>Novedad, singularidad</td><td>5 años, renovable hasta 25</td></tr>
+<tr><td>Marcas y dominios</td><td>Identificación de productos y servicios</td><td>No infringir otros derechos</td><td>10 años, renovable</td></tr>
+<tr><td>Copyright</td><td>Creaciones artísticas</td><td>Unicidad, expresión, tangibilidad</td><td>70 años</td></tr>
+<tr><td>Variedades vegetales</td><td>Nuevas variedades</td><td>Novedad, distintividad, uniformidad, estabilidad</td><td>25 o 30 años según la especie</td></tr>
+<tr><td>Secretos comerciales</td><td>Información valiosa no conocida por el público</td><td>Que no sea pública</td><td>Mientras se mantenga el secreto</td></tr></tbody></table></div>
+<p>Todos son un <b>intercambio con el Estado</b>: el titular revela algo (la invención, el diseño, la variedad) o paga una tasa, y a cambio obtiene un derecho exclusivo de explotación. El secreto es la excepción: se protege precisamente <b>no revelándolo</b>.</p>
+
+<h2 id="s4">4. Patentes y modelos de utilidad</h2>
+<ul><li><b>Derecho territorial:</b> solo vale en los países donde se concede (los modelos de utilidad no existen en todos).</li><li><b>Duración:</b> 20 años (10 los modelos).</li><li>Se conceden <b>sin garantía del Estado</b> sobre su validez.</li></ul>
+<div class="tbl"><table><thead><tr><th>Requisito</th><th>Significado</th></tr></thead><tbody>
+<tr><td>Novedad</td><td>No está comprendida en el estado de la técnica</td></tr>
+<tr><td>Actividad inventiva</td><td>No resulta obvia para un experto en la materia</td></tr>
+<tr><td>Aplicación industrial</td><td>Se puede fabricar o usar en cualquier industria</td></tr>
+<tr><td>Suficiencia descriptiva</td><td>Descrita de forma clara y completa para que un experto pueda ejecutarla</td></tr></tbody></table></div>
+<p><b>Partes del documento:</b> título, resumen, descripción (área tecnológica, estado del arte, explicación de los dibujos, cómo reproducirla, ejemplos) y <b>reivindicaciones</b>, que fijan qué queda protegido.</p>
+<p><b>Exclusiones por motivos éticos:</b> clonación de seres humanos, modificación de la identidad genética germinal humana, uso de embriones humanos con fines industriales o comerciales, y modificación genética de animales que les cause sufrimiento sin utilidad médica sustancial.</p>
+
+<h2 id="s5">5. Antes de solicitar la patente</h2>
+<ul><li>Búsqueda de parecidos o alternativas.</li><li>Definir el propósito de la patente.</li><li>Evaluar mercado, recursos, competencia, fortaleza jurídica y evolución de la tecnología.</li><li>Analizar lo ya protegido y lo existente.</li><li>Dibujar escenarios probables de evolución tecnológica.</li><li>Analizar la dificultad de los mercados según la presencia de competencia.</li><li>Análisis de patentabilidad.</li><li><b>Informe de <i>Freedom to Operate</i> (FTO):</b> comprobar que se puede explotar sin infringir derechos de terceros.</li></ul>
+<p><b>Dónde buscar:</b> OEPM, EPO, USPTO, Google Patents, Espacenet, Patentscope (OMPI) y la Oficina Japonesa de Patentes.</p>
+
+<h2 id="s6">6. Diseños, marcas, copyright, variedades y secretos</h2>
+<p><b>Diseños:</b> protegen la apariencia (alzado, perfil, planta). Derecho territorial, 5 años renovables hasta 25.</p>
+<p><b>Marcas y nombres de dominio:</b> se paga una tasa a cambio del derecho exclusivo de uso. Territorial, 10 años renovables. Pueden ser de letras, logotipos, tridimensionales, olfativas, sonoras, de movimiento o de patrón. En mercados muy competitivos el éxito no depende solo de elementos objetivos: la marca diferencia mediante la publicidad y asocia una imagen atractiva al producto.</p>
+<p><b>Copyright:</b> derecho a explotar la obra; territorial; 70 años.</p>
+<p><b>Variedades vegetales:</b> el titular revela la variedad y obtiene su explotación exclusiva durante 25 o 30 años.</p>
+<p><b>Secretos comerciales:</b> el titular no revela el secreto y conserva derechos exclusivos mientras lo mantenga.</p>
+
+<div class="note" id="acl"><h3>Aclaraciones sobre las diapositivas</h3><ul>
+<li>Los 70 años del copyright se cuentan, en España y la UE, desde la muerte del autor.</li>
+<li>Para las marcas la diapositiva solo cita «no infringir otros derechos». Además, la marca necesita carácter distintivo.</li>
+<li>El documento histórico del gremio veneciano aparece como «Capitolare dei fiolariis»: es el estatuto de los vidrieros de Venecia (siglo XIII).</li>
+<li>Algunas diapositivas mezclan «STATE/ASSIGNEE» en inglés: Estado y titular.</li></ul></div>
+`
+},
+{
+  id:"pat5", s:"pate", date:"2026-11-20", title:"La patente",
+  summary:"La patente es un trato con el Estado: el titular divulga la invención y recibe a cambio un monopolio territorial de 20 años. Saber leerla (requisitos, códigos, vías, plazos y excepciones) es la base para usarla como fuente de inteligencia.",
+  key:[
+    "<b>Definición:</b> el Estado concede un monopolio de explotación; el titular divulga la invención. Territorial, 20 años, sin garantía de validez.",
+    "<b>Estado de la técnica:</b> todo lo accesible al público antes de la solicitud (publicaciones, tesis, congresos, prensa, exposiciones, uso).",
+    "<b>Novedad frente a actividad inventiva:</b> juntar dos cosas conocidas puede ser nuevo, pero solo es inventivo si produce un efecto inesperado (sinergia), no una mera yuxtaposición.",
+    "<b>Modelos de utilidad:</b> configuración o estructura con ventaja práctica; no para procedimientos, materia biológica ni fármacos.",
+    "<b>Códigos:</b> clasificación CIP/IPC y códigos de tipo (A solicitud, B1 concesión sin examen, B2 con examen, U/Y/Z modelos).",
+    "<b>Software:</b> no patentable como tal; sí una invención implementada en ordenador con efecto técnico adicional.",
+    "<b>Licencias:</b> contractuales (exclusivas o no), obligatorias (falta de explotación, interés público, dependencia) y de pleno derecho.",
+    "<b>Obligación de explotar:</b> en 4 años desde la solicitud o 3 desde la concesión; si no, cabe licencia obligatoria.",
+    "<b>CCP:</b> hasta 5 años más para medicamentos y fitosanitarios.",
+    "<b>Vías:</b> nacional, europea (EPO) y PCT (OMPI). <b>Prioridad:</b> 12 meses para extender a otros países con la fecha de la primera solicitud.",
+    "<b>Excepciones:</b> uso experimental, cláusula Bolar, fórmulas magistrales y agotamiento del derecho."
+  ],
+  body:`
+<h2 id="s1">1. Definición y requisitos</h2>
+<p>La patente es un intercambio: el <b>Estado</b> concede al titular el derecho de explotar la invención en exclusiva; el <b>titular</b> divulga la invención. Es un derecho <b>territorial</b>, dura <b>20 años</b> y se concede <b>sin garantía de validez</b> por parte del Estado.</p>
+<div class="tbl"><table><thead><tr><th>Requisito de fondo</th><th>Significado</th></tr></thead><tbody>
+<tr><td>Novedad</td><td>No está comprendida en el estado de la técnica</td></tr>
+<tr><td>Actividad inventiva</td><td>No es obvia para un experto en la materia a la vista del estado de la técnica</td></tr>
+<tr><td>Aplicación industrial</td><td>Se puede fabricar o utilizar en cualquier industria</td></tr>
+<tr><td>Suficiencia descriptiva</td><td>Descrita con claridad suficiente para que un experto la ejecute</td></tr></tbody></table></div>
+<p><b>Estado de la técnica:</b> todo lo que, antes de la fecha de solicitud, se ha hecho accesible al público por escrito, de palabra, por uso o por cualquier otro medio: publicaciones científicas, entrevistas en prensa, tesis doctorales, congresos, exposiciones. Por eso <b>divulgar una invención antes de solicitar la patente destruye su novedad</b>.</p>
+
+<h2 id="s2">2. Novedad y actividad inventiva: dos ejemplos de clase</h2>
+<div class="tbl"><table><thead><tr><th>Invención</th><th>Estado de la técnica</th><th>¿Novedad?</th><th>¿Actividad inventiva?</th></tr></thead><tbody>
+<tr><td>Máquina de salchichas = picadora de carne + rellenadora de tripas</td><td>Ya existen la misma picadora y la misma rellenadora, por separado</td><td>Sí: no existe un aparato que tenga las dos</td><td><b>No:</b> el efecto es el esperado; es una mera yuxtaposición</td></tr>
+<tr><td>Composición = tranquilizante + analgésico</td><td>Ya existen los dos por separado</td><td>Sí: no existe la composición con ambos</td><td><b>Sí</b>, si hay efecto sinérgico: el analgésico potencia el efecto tranquilizante</td></tr></tbody></table></div>
+<p>En clase se trabajó además un caso práctico con una reivindicación de un envase para líquidos calientes (base circular, pared fina con borde circular y superficie de agarre aislada térmicamente) para compararla con el estado de la técnica.</p>
+
+<h2 id="s3">3. Modelos de utilidad</h2>
+<p>Invenciones nuevas y con actividad inventiva que dan a un objeto una configuración, estructura o composición con una <b>ventaja práctica apreciable</b> para su uso o fabricación. <b>No se aplican</b> a procedimientos, materia biológica ni sustancias y composiciones farmacéuticas.</p>
+
+<h2 id="s4">4. Cómo se lee una patente</h2>
+<p><b>Formato:</b> resumen; descripción (título, sector de la técnica, estado de la técnica, breve descripción, descripción de los dibujos, modo de realización con ejemplos); reivindicaciones; dibujos. La oficina emite además un <b>Informe sobre el Estado de la Técnica (IET)</b>.</p>
+<p><b>Clasificación Internacional de Patentes (CIP / IPC):</b> por ejemplo, <code>B01J 23/00</code> indica sección y clase (B01), subclase (J) y grupo/subgrupo (23/00). Permite buscar todo lo publicado en un campo técnico concreto.</p>
+<div class="tbl"><table><thead><tr><th>Ejemplo: ES 0359879 B1</th><th>Significado</th></tr></thead><tbody>
+<tr><td>ES</td><td>País de solicitud</td></tr>
+<tr><td>0359879</td><td>Número de publicación</td></tr>
+<tr><td>A</td><td>Publicación de la solicitud</td></tr>
+<tr><td>B1 / B2</td><td>Concesión sin examen / con examen previo</td></tr>
+<tr><td>B8 / B9</td><td>Corrección de la primera página / del texto completo</td></tr>
+<tr><td>U, Y, Z</td><td>Modelo de utilidad</td></tr></tbody></table></div>
+<p>El historial de una patente cuenta su vida: en el ejemplo de clase, concesión (1992), concesión tras oposición (2005) y revocación (2006) por no pagar las tasas.</p>
+
+<h2 id="s5">5. Qué no se puede patentar</h2>
+<ul><li><b>Exclusiones éticas:</b> clonación humana, modificación de la identidad genética germinal humana, uso industrial o comercial de embriones humanos, modificación genética de animales que cause sufrimiento sin utilidad médica sustancial.</li>
+<li>Variedades vegetales y razas animales (salvo que la invención no se limite a una variedad o raza concreta).</li>
+<li>Procedimientos esencialmente biológicos de obtención de vegetales o animales.</li>
+<li>El cuerpo humano y el simple descubrimiento de uno de sus elementos, incluida una secuencia de gen.</li></ul>
+<p><b>Sí se puede patentar</b> un elemento aislado del cuerpo humano u obtenido por un procedimiento técnico, incluida la secuencia de un gen idéntica a la natural, siempre que se mencione explícitamente su aplicación industrial.</p>
+<p><b>Software:</b> no es patentable como tal (artículo 52.2.c y 52.3 del Convenio sobre la Patente Europea). Sí lo es una <b>invención implementada en ordenador</b> con un <b>efecto técnico adicional</b>: no basta con que el programa resuelva un problema, el resultado tiene que «salir» del medio virtual y modificar la materia.</p>
+
+<h2 id="s6">6. Licencias y obligación de explotar</h2>
+<div class="tbl"><table><thead><tr><th>Tipo</th><th>Cuándo</th></tr></thead><tbody>
+<tr><td>Contractuales</td><td>Exclusivas o no exclusivas, por acuerdo</td></tr>
+<tr><td>Obligatorias (no exclusivas)</td><td>Falta de explotación, necesidad de explotación por interés público o dependencia entre patentes</td></tr>
+<tr><td>De pleno derecho</td><td>El titular ofrece públicamente la licencia a cualquier interesado</td></tr></tbody></table></div>
+<p><b>Obligación de explotar:</b> el titular debe explotar la invención (él o alguien autorizado) lo suficiente para abastecer el mercado nacional, en un plazo de <b>4 años desde la solicitud</b> o <b>3 desde la concesión</b>. Si no lo hace, cualquier interesado puede pedir una licencia obligatoria.</p>
+<p><b>Interés público:</b> el Gobierno puede someter una patente a licencias obligatorias cuando sea de importancia primordial para la salud pública o la defensa nacional, o cuando la falta de explotación (en cantidad o calidad) cause un perjuicio grave.</p>
+
+<h2 id="s7">7. Certificados complementarios de protección (CCP)</h2>
+<p>En medicamentos y fitosanitarios pasan 10-14 años entre la solicitud de la patente y la autorización de comercialización, de modo que queda poco tiempo de monopolio para recuperar la inversión. El CCP compensa ese retraso.</p>
+<ul><li><b>Base legal:</b> Reglamento (CE) 469/2009 (medicamentos) y Reglamento (CE) 1610/96 (fitosanitarios).</li>
+<li><b>Protege:</b> el principio activo o sustancia activa, sus combinaciones y mezclas con al menos una sustancia activa.</li>
+<li><b>Condiciones:</b> patente en vigor en España, autorización de comercialización en España o la UE, y que no exista un CCP anterior.</li>
+<li><b>Dónde y cuándo:</b> en la OEPM, dentro de los 6 meses siguientes a la primera autorización de comercialización o a la concesión de la patente.</li>
+<li><b>Duración:</b> (fecha de la primera autorización − fecha de solicitud de la patente) − 5 años, con un máximo de <b>5 años</b>. Empieza a contar cuando expira la patente base.</li>
+<li><b>Tasa:</b> una única tasa de mantenimiento según la duración.</li></ul>
+
+<h2 id="s8">8. Vías de protección, prioridad y plazos</h2>
+<p>Antes de solicitar hay que decidir <b>en qué países</b> se quiere proteger, hoy y en el futuro: es la estrategia de protección.</p>
+<ul><li><b>Vía nacional:</b> país por país.</li><li><b>Vía europea:</b> ante la EPO.</li><li><b>Vía PCT:</b> ante la OMPI, para muchos países a la vez.</li></ul>
+<p><b>Prioridad:</b> la primera solicitud es la patente de prioridad y su fecha, la fecha de prioridad. Durante <b>12 meses</b> se puede presentar la misma invención en otros países y se considera presentada en la fecha de prioridad. Ejemplo: solicitud española el 01/01/2017; extensión el 01/01/2018; fecha efectiva en todos los países, 01/01/2017.</p>
+<div class="tbl"><table><thead><tr><th>Vía europea</th><th>Momento</th></tr></thead><tbody>
+<tr><td>Primera solicitud (por ejemplo, ES): prioridad</td><td>Mes 0</td></tr>
+<tr><td>Solicitud EP y designación de países</td><td>Mes 12</td></tr>
+<tr><td>Publicación</td><td>Mes 18</td></tr>
+<tr><td>Examen</td><td>Desde el mes 24</td></tr>
+<tr><td>Concesión o denegación</td><td>Variable (años)</td></tr>
+<tr><td>Validación en cada país</td><td>Concesión + 3 meses</td></tr>
+<tr><td>Oposición</td><td>Concesión + 9 meses</td></tr></tbody></table></div>
+
+<h2 id="s9">9. Para qué sirven las patentes</h2>
+<div class="tbl"><table><thead><tr><th>Como fuente de información</th><th>Como fuente de beneficio económico</th></tr></thead><tbody>
+<tr><td>Información actualizada, «lo último» (novedad)</td><td>Monopolio</td></tr>
+<tr><td>Clara y suficiente para que un experto la ponga en práctica</td><td>Licencias y royalties</td></tr>
+<tr><td>Revisión de lo que ya se conocía (estado de la técnica)</td><td>Licencias cruzadas</td></tr>
+<tr><td>Información sobre competidores y colaboradores</td><td>Venta de patentes</td></tr>
+<tr><td>Planificar la I+D y no duplicar investigaciones</td><td>Base para crear una <i>spin-off</i></td></tr></tbody></table></div>
+<p>La propiedad industrial rentabiliza la inversión en investigación y es una herramienta de negociación.</p>
+
+<h2 id="s10">10. Derechos del titular y sus límites</h2>
+<p><b>Protección provisional</b> desde la publicación de la solicitud; <b>plena</b> desde la concesión.</p>
+<p>El titular puede impedir a terceros sin su consentimiento: fabricar, ofrecer, comercializar o usar el <b>producto</b> patentado, o usar u ofrecer el <b>procedimiento</b>. Si su derecho se lesiona puede pedir el cese de los actos, indemnización, embargo, atribución en propiedad de los objetos, destrucción de los medios embargados y publicación de la sentencia.</p>
+<div class="tbl"><table><thead><tr><th>Excepción</th><th>Qué permite</th></tr></thead><tbody>
+<tr><td>Uso experimental</td><td>Actos con fines experimentales sobre el objeto de la invención</td></tr>
+<tr><td>Cláusula Bolar</td><td>Estudios y ensayos necesarios para obtener la autorización de un medicamento (incluido preparar el principio activo para ello)</td></tr>
+<tr><td>Fórmulas magistrales</td><td>Preparación extemporánea de medicamentos en farmacias</td></tr>
+<tr><td>Agotamiento del derecho</td><td>Actos sobre un producto ya comercializado en la UE por el titular o con su consentimiento</td></tr></tbody></table></div>
+
+<h2 id="s11">11. Gestión de la tecnología: tres preguntas</h2>
+<ol><li><b>¿Qué se va a proteger?</b> Las ideas no son patentables; su materialización sí.</li><li><b>¿Se puede proteger como patente?</b> Comprobar las exclusiones.</li><li><b>¿Es patentable?</b> Novedad, actividad inventiva y aplicación industrial.</li></ol>
+<p><b>Dónde buscar:</b> OEPM, EPO, USPTO, Google Patents, Espacenet, Patentscope, Oficina Japonesa de Patentes y Clarivate Analytics (de pago).</p>
+
+<div class="note" id="acl"><h3>Aclaraciones sobre las diapositivas</h3><ul>
+<li>La diapositiva cita la «Ley 11/86 de Patentes». Esa ley fue sustituida por la <b>Ley 24/2015, de Patentes</b>, en vigor desde el 1 de abril de 2017. Los conceptos explicados se mantienen.</li>
+<li>Los CCP de medicamentos pueden prorrogarse 6 meses más por estudios pediátricos; la diapositiva no lo menciona.</li>
+<li>El caso práctico del envase aparece con imágenes de anterioridades sin texto; aquí solo se recoge la reivindicación que se analizó.</li></ul></div>
+`
+},
+{
+  id:"pat6", s:"pate", date:"2026-11-20", title:"¿Qué puedo saber de la competencia y del mercado?",
+  summary:"Los datos bibliográficos de patentes, diseños, marcas y variedades se convierten en indicadores con un recuento sencillo: tendencias tecnológicas, actores principales, mercados y su evolución.",
+  key:[
+    "<b>Datos bibliográficos de una patente:</b> título, inventor, titular, fechas de solicitud y concesión, países designados, país de prioridad, citas recibidas y efectuadas, clasificación CIP.",
+    "<b>Qué se conoce:</b> tendencias de la tecnología, competencia y principales actores, equipos, países y titulares, mercados geográficos y su evolución.",
+    "<b>Cómo:</b> recuento simple, porcentajes, intervalos, proporciones e inferencias simples.",
+    "<b>Ejemplos de resultados:</b> evolución anual de solicitudes, naturaleza pública o privada del solicitante, áreas tecnológicas y actividad de los competidores.",
+    "<b>Diseños, marcas y variedades vegetales</b> también generan indicadores (titular, tipo de variedad).",
+    "<b>Vigilar el entorno:</b> marketplaces tecnológicos (gratuitos y de pago), brokerage de patentes y programas de compra de patentes."
+  ],
+  body:`
+<h2 id="s1">1. De los datos bibliográficos a los indicadores</h2>
+<p>Cada patente o modelo trae unos <b>datos bibliográficos</b> que, contados en conjunto, se convierten en indicadores:</p>
+<div class="tbl"><table><thead><tr><th>Dato</th><th>Qué indica si se agrega</th></tr></thead><tbody>
+<tr><td>Título de la invención y clasificación CIP</td><td>Áreas tecnológicas y su evolución</td></tr>
+<tr><td>Inventor</td><td>Investigadores y equipos clave</td></tr>
+<tr><td>Titular</td><td>Competidores, colaboradores, naturaleza pública o privada</td></tr>
+<tr><td>Fechas de solicitud y concesión</td><td>Tendencia temporal de la tecnología</td></tr>
+<tr><td>Países designados</td><td>Mercados donde el titular quiere vender</td></tr>
+<tr><td>País de prioridad</td><td>Dónde se origina la tecnología</td></tr>
+<tr><td>Citas recibidas y efectuadas</td><td>Relevancia de la patente y relaciones entre tecnologías</td></tr></tbody></table></div>
+
+<h2 id="s2">2. Análisis básico</h2>
+<div class="tbl"><table><thead><tr><th>Conocer</th><th>Mediante</th></tr></thead><tbody>
+<tr><td>Tendencias de la tecnología</td><td>Recuento simple</td></tr>
+<tr><td>Competencia y principales actores</td><td>Porcentajes</td></tr>
+<tr><td>Equipos, países y titulares</td><td>Intervalos y proporciones</td></tr>
+<tr><td>Principales mercados geográficos y su evolución</td><td>Inferencias simples</td></tr></tbody></table></div>
+<p><b>Ejemplos de resultados vistos en clase:</b> la evolución anual del número de solicitudes de una tecnología; la naturaleza del solicitante (privado frente a público) año a año; el reparto por áreas tecnológicas (química, medicina, ingeniería, informática…), y la actividad de un competidor en el tiempo.</p>
+<p><b>Fuentes:</b> OEPM, EPO, USPTO, Google Patents, Espacenet, Patentscope y la Oficina Japonesa de Patentes.</p>
+
+<h2 id="s3">3. Diseños, marcas y variedades vegetales</h2>
+<p>Siguen la misma lógica. En variedades vegetales los datos útiles son el <b>titular</b> y el <b>tipo de variedad</b>, y permiten analizar la competencia y los principales actores con recuentos y porcentajes.</p>
+
+<h2 id="s4">4. Vigilar el entorno: marketplaces y brokerage</h2>
+<p>Los <b>marketplaces</b> tecnológicos son plataformas en línea de intermediación: compraventa de tecnología y patentes, y búsqueda de oportunidades de cooperación. Pueden ser generalistas o sectoriales. Muchas universidades, centros de investigación e institutos tecnológicos publican así su oferta tecnológica y su cartera de patentes.</p>
+<div class="tbl"><table><thead><tr><th>Tipo</th><th>Ejemplos citados en clase</th></tr></thead><tbody>
+<tr><td>Marketplaces gratuitos</td><td>Patent Mall, PatentAuction.com, Patents.com Marketplace, IP Marketplace, Idea Buyer, Inpama.com, PCTXS.com</td></tr>
+<tr><td>Marketplaces de pago</td><td>Yet2.com, IAM Market, Tynax Patent Library, Royalty Exchange, IPNexus.com, IdeaConnection, USPTO eOG:P, Ocean Tomo Big-ASK Market</td></tr>
+<tr><td>Brokerage</td><td>ICAP Patent Brokerage, IP Trader, Adapt IP, Transactions IP, True North IP, Vibrant IP, IP Offerings, Western IP Law, Aqua Licensing, IP Investments Group, Clear View IP, New England IP</td></tr>
+<tr><td>Programas de compra</td><td>Marathon Patent Group, Google's Patent Purchase Portal, RPX, Allied Security Trust (AST)</td></tr></tbody></table></div>
+<p>Para el analista, lo que una empresa pone en venta o busca en estos mercados es una señal de su estrategia: de qué tecnología se desprende y cuál necesita.</p>
+
+<div class="note" id="acl"><h3>Aclaraciones sobre las diapositivas</h3><ul>
+<li>Las solicitudes de patente se publican, por regla general, a los <b>18 meses</b> de la fecha de prioridad. Por eso, en cualquier gráfico de evolución, los dos últimos años aparecen más bajos de lo real: no es una caída de la actividad, sino datos aún no publicados.</li>
+<li>Los gráficos de la clase son ejemplos sin indicar la tecnología concreta; se describen aquí solo por el tipo de análisis que muestran.</li>
+<li>Algunas plataformas de la lista pueden haber cerrado o cambiado de nombre; conviene comprobarlas antes de usarlas.</li></ul></div>
+`
+},
+{
+  id:"pat7", s:"pate", date:"2026-11-20", title:"Herramientas y fuentes de información",
+  summary:"Catálogo de fuentes abiertas para vigilancia tecnológica e inteligencia competitiva: literatura científica, proyectos, estadística, normas, noticias, patentes, personas y seguimiento de la competencia en la web.",
+  key:[
+    "<b>Literatura científica:</b> CiteSeerX, SciELO, Redalyc, Dialnet, ScienceDirect; tesis en TESEO y repositorios universitarios.",
+    "<b>Literatura gris y entidades:</b> universidades, ICEX, centros tecnológicos, parques científicos (APTE), CSIC, madri+d, FECYT, FEDIT.",
+    "<b>Proyectos financiados:</b> CDTI y Comisión Europea: muestran en qué invierte cada actor antes de que haya patente.",
+    "<b>Estadística y normas:</b> Eurostat; ISO, UNE y NSSN.",
+    "<b>Patentes:</b> OEPM y Espacenet.",
+    "<b>Personas y redes:</b> LinkedIn, redes sociales y buscadores de personas.",
+    "<b>Competencia en la web:</b> herramientas de publicidad y analítica, detección de plagio, búsquedas de ego por RSS, DomainTools y vínculos entrantes.",
+    "<b>Ojo:</b> varias herramientas de la lista ya no existen; la fuente se elige por la pregunta, no por la lista."
+  ],
+  body:`
+<h2 id="s1">1. Fuentes por categoría</h2>
+<div class="tbl"><table><thead><tr><th>Categoría</th><th>Fuentes citadas en clase</th><th>Para qué sirve</th></tr></thead><tbody>
+<tr><td>Buscadores generales</td><td>Suite de Google (Académico, Patents, Alertas, Trends…), Yandex</td><td>Primera aproximación y alertas</td></tr>
+<tr><td>Revistas y artículos</td><td>CiteSeerX, SciELO, Redalyc, Dialnet, ScienceDirect, Monografías.com</td><td>Estado de la ciencia, autores y grupos</td></tr>
+<tr><td>Tesis</td><td>TESEO (España), repositorio del MIT, tesis europeas</td><td>Investigación muy reciente y detallada; las tesis forman parte del estado de la técnica</td></tr>
+<tr><td>Otra literatura</td><td>Universidades, ICEX, directorio de centros tecnológicos (ministerio), APTE, CSIC, madri+d</td><td>Oferta tecnológica, informes sectoriales, capacidades</td></tr>
+<tr><td>Proyectos</td><td>CDTI, Comisión Europea (proyectos europeos)</td><td>Qué se investiga, quién y con cuánto dinero</td></tr>
+<tr><td>Ciencia y tecnología</td><td>FECYT, FEDIT</td><td>Indicadores y red de centros tecnológicos</td></tr>
+<tr><td>Estadística</td><td>Eurostat</td><td>Tamaño y evolución de los mercados</td></tr>
+<tr><td>Normativa</td><td>ISO, AENOR/UNE, NSSN</td><td>Requisitos técnicos y barreras de entrada</td></tr>
+<tr><td>Noticias</td><td>Reuters</td><td>Movimientos empresariales</td></tr>
+<tr><td>Datos y cálculo</td><td>Wolfram Alpha</td><td>Datos estructurados y cálculos rápidos</td></tr>
+<tr><td>Patentes</td><td>OEPM, Espacenet</td><td>Tecnología protegida, titulares, inventores</td></tr>
+<tr><td>Personas y redes</td><td>LinkedIn, redes sociales, Pipl, Yasni, 123people</td><td>Expertos, fichajes, equipos</td></tr></tbody></table></div>
+
+<h2 id="s2">2. Seguir a la competencia en la web</h2>
+<div class="tbl"><table><thead><tr><th>Necesidad</th><th>Herramientas citadas</th></tr></thead><tbody>
+<tr><td>Publicidad y analítica de los competidores</td><td>Adbeat, AdGooroo, MixRank, Moat</td></tr>
+<tr><td>Detectar copias de nuestros textos</td><td>Plagiarism Checker (Universidad de Maryland), Plagiarisma.Net, Plagiarism Detect (de pago, unos 0,5 $ por página)</td></tr>
+<tr><td>Saber qué se dice de nosotros</td><td>Búsquedas de ego (el nombre de la empresa o de la persona) suscritas por RSS o alertas</td></tr>
+<tr><td>Dominios</td><td>DomainTools: titular, histórico, otros dominios relacionados</td></tr>
+<tr><td>Quién enlaza a una web</td><td>Vínculos entrantes con operadores como <code>link:</code> o <code>linkdomain:</code></td></tr></tbody></table></div>
+
+<h2 id="s3">3. Cómo usar este catálogo como analista</h2>
+<ul><li><b>Empezar por la pregunta:</b> qué decisión hay que apoyar y qué dato falta. La lista es un menú, no un recorrido.</li>
+<li><b>Combinar fuentes:</b> una patente dice qué se protegió; un proyecto CDTI o europeo, qué se está investigando; una tesis, quién lo investiga; LinkedIn, quién se ha movido de empresa.</li>
+<li><b>Fechar todo:</b> cada fuente tiene su retraso (las patentes, 18 meses; los proyectos, al concederse; las noticias, inmediato).</li>
+<li><b>Comprobar que la herramienta sigue viva</b> antes de citarla en un informe.</li></ul>
+
+<div class="note" id="acl"><h3>Aclaraciones sobre las diapositivas</h3><ul>
+<li><b>123people</b> cerró en 2014 y <b>Sputnik</b> (buscador ruso) en 2020.</li>
+<li>Google retiró el operador <code>link:</code> en 2017; <code>linkdomain:</code> era de Yahoo y tampoco funciona. Hoy los vínculos entrantes se consultan con herramientas SEO (Ahrefs, Semrush, Majestic) o Google Search Console para la web propia.</li>
+<li><b>Moat</b> (Oracle) dejó de prestar servicio en 2024. AdGooroo fue absorbida por Kantar.</li>
+<li>Las normas UNE ya no las vende AENOR, sino la <b>Asociación Española de Normalización (UNE)</b>, desde 2017.</li>
+<li>En la diapositiva el directorio de centros tecnológicos aparece como del MICINN; el ministerio ha cambiado de nombre varias veces.</li></ul></div>
+`
+},
+{
+  id:"pat8", s:"pate", date:"2026-11-20", title:"Herramientas de inteligencia artificial",
+  summary:"Panorama de herramientas de IA generativa útiles para el trabajo de inteligencia: creatividad, productividad, investigación y transcripción. Ayudan a ir más rápido, pero sus resultados se verifican y nunca se les sube información confidencial.",
+  key:[
+    "<b>Categorías:</b> creatividad (texto, imagen, vídeo), productividad, investigación, música y transcripción.",
+    "<b>Asistentes generales:</b> ChatGPT, Copilot, Gemini, Claude.",
+    "<b>Búsqueda con fuentes:</b> Perplexity. <b>Artículos científicos:</b> SciSpace.",
+    "<b>Imagen y vídeo:</b> Flux Schnell, Playground AI, Illusion Diffusion, Hotpot, Pictory.",
+    "<b>Escritura:</b> Jasper, Grammarly. <b>Reuniones y agenda:</b> Fireflies.ai, Reclaim.ai.",
+    "<b>Regla del analista:</b> la IA propone, el analista verifica y firma.",
+    "<b>Regla de la propiedad industrial:</b> subir una invención no publicada a un servicio externo puede comprometer su novedad y su confidencialidad."
+  ],
+  body:`
+<h2 id="s1">1. Herramientas presentadas en clase</h2>
+<div class="tbl"><table><thead><tr><th>Herramienta</th><th>Categoría</th><th>Uso en inteligencia</th></tr></thead><tbody>
+<tr><td>ChatGPT (OpenAI)</td><td>Asistente general</td><td>Redactar, resumir, estructurar informes, generar hipótesis</td></tr>
+<tr><td>Copilot (Microsoft)</td><td>Asistente general / productividad</td><td>Integrado en Office y Edge; resumen de documentos y correos</td></tr>
+<tr><td>Gemini (Google)</td><td>Asistente general</td><td>Integrado con los servicios de Google</td></tr>
+<tr><td>Claude (Anthropic)</td><td>Asistente general</td><td>Documentos largos, análisis y redacción</td></tr>
+<tr><td>Perplexity</td><td>Investigación</td><td>Búsqueda conversacional que cita las fuentes</td></tr>
+<tr><td>SciSpace</td><td>Investigación</td><td>Buscar, leer y explicar artículos científicos</td></tr>
+<tr><td>Jasper</td><td>Creatividad (texto)</td><td>Textos de marketing</td></tr>
+<tr><td>Grammarly</td><td>Productividad</td><td>Corrección y estilo (sobre todo en inglés)</td></tr>
+<tr><td>Flux Schnell, Playground AI, Hotpot</td><td>Creatividad (imagen)</td><td>Generar y editar imágenes</td></tr>
+<tr><td>Illusion Diffusion</td><td>Creatividad (imagen)</td><td>Imágenes con patrones ocultos</td></tr>
+<tr><td>Pictory</td><td>Creatividad (vídeo)</td><td>Convertir textos en vídeos</td></tr>
+<tr><td>Fireflies.ai</td><td>Transcripción</td><td>Grabar, transcribir y resumir reuniones</td></tr>
+<tr><td>Reclaim.ai</td><td>Productividad</td><td>Planificar la agenda automáticamente</td></tr></tbody></table></div>
+<p>La clase remite también a la «mega guía» de Xataka de herramientas de IA gratuitas para ampliar el listado.</p>
+
+<h2 id="s2">2. Dónde aporta la IA en el ciclo de inteligencia</h2>
+<div class="tbl"><table><thead><tr><th>Fase</th><th>Aportación</th><th>Riesgo</th></tr></thead><tbody>
+<tr><td>Dirección</td><td>Desglosar la pregunta, proponer indicadores</td><td>Que imponga un enfoque genérico</td></tr>
+<tr><td>Obtención</td><td>Proponer términos y fuentes; búsqueda con citas</td><td>Fuentes inventadas o mal citadas</td></tr>
+<tr><td>Procesamiento</td><td>Traducir, resumir, extraer entidades, transcribir</td><td>Errores silenciosos en nombres, cifras y fechas</td></tr>
+<tr><td>Análisis</td><td>Generar hipótesis alternativas, abogado del diablo</td><td>Conclusiones plausibles pero sin base</td></tr>
+<tr><td>Difusión</td><td>Redactar y adaptar el informe al destinatario</td><td>Perder los matices de probabilidad</td></tr></tbody></table></div>
+
+<h2 id="s3">3. Precauciones</h2>
+<ul><li><b>Verificar siempre:</b> cada dato, cita o referencia que dé la IA se comprueba en la fuente original.</li>
+<li><b>Confidencialidad:</b> no subir información clasificada, datos personales ni invenciones no publicadas. Una divulgación antes de solicitar la patente puede destruir la novedad.</li>
+<li><b>Condiciones de uso:</b> revisar si el servicio usa los datos para entrenar y dónde los almacena.</li>
+<li><b>Trazabilidad:</b> anotar qué parte del trabajo se hizo con IA y con qué herramienta.</li></ul>
+
+<div class="note" id="acl"><h3>Aclaraciones sobre las diapositivas</h3><ul>
+<li>Las diapositivas muestran capturas de cada herramienta sin explicación; los usos de la tabla son los habituales de cada una.</li>
+<li>Este sector cambia cada pocos meses: nombres, precios y funciones pueden haber cambiado desde que se hicieron las diapositivas.</li></ul></div>
+`
+},
+{
+  id:"pat9", s:"pate", date:"2026-11-20", title:"IP Score: valoración de una patente",
+  summary:"IP Score es la herramienta gratuita de la Oficina Europea de Patentes para valorar una patente o tecnología: puntúa factores legales, tecnológicos, de mercado y estratégicos, sitúa la patente en una matriz de riesgo y oportunidad y estima su valor económico.",
+  key:[
+    "<b>Qué es:</b> herramienta de la EPO para valorar patentes de forma estructurada.",
+    "<b>Cuatro bloques:</b> estado legal, tecnología, condiciones de mercado y estrategia, cada factor puntuado de 0 a 5.",
+    "<b>Resultado visual:</b> un gráfico de radar por bloque y una matriz de riesgo frente a oportunidad.",
+    "<b>Valoración económica:</b> valor actual neto de los beneficios, ventajas competitivas frente a una tecnología sustitutiva y valor actual esperado.",
+    "<b>Ejemplo de clase:</b> valor actual esperado de 8.717.000 con 320 empresas en el mercado y una cuota esperada del 0,43 %."
+  ],
+  body:`
+<h2 id="s1">1. Qué es IP Score</h2>
+<p>Herramienta de la <b>Oficina Europea de Patentes (EPO)</b> para valorar una patente, una solicitud o una tecnología. El usuario responde a una batería de preguntas, cada una puntuada de 0 a 5, agrupadas en cuatro bloques. El resultado es un perfil de fortalezas y debilidades y una estimación económica.</p>
+
+<h2 id="s2">2. Los cuatro bloques de factores</h2>
+<div class="tbl"><table><thead><tr><th>Bloque</th><th>Factores que se puntúan</th></tr></thead><tbody>
+<tr><td>Estado legal</td><td>Fuerza de la situación jurídica, plazo restante de la patente, amplitud de las reivindicaciones, cobertura geográfica, procedimientos judiciales, seguimiento de infracciones, sistemas para hacerla valer, estado de la patente</td></tr>
+<tr><td>Tecnología</td><td>Tecnología única o sustitutiva, prueba de que la invención funciona, técnicas y equipos de producción, plazo de desarrollo hasta el mercado, valor de comercialización, facilidad de imitación ilegal y de identificar imitaciones, dependencia de licencias</td></tr>
+<tr><td>Condiciones de mercado</td><td>Opciones de comercialización, productos competidores o sustitutivos, esperanza de vida, precio de venta alcanzable, volumen de negocio potencial, crecimiento del mercado, ingresos potenciales por licencia, conocimiento de las oportunidades, requisitos de autorización</td></tr>
+<tr><td>Estrategia</td><td>Correlación entre patente y estrategia, peso en las principales áreas tecnológicas, acuerdos de licencia o venta, restricción del desarrollo competitivo, libertad para operar, imagen, nuevos mercados, mercados existentes</td></tr></tbody></table></div>
+
+<h2 id="s3">3. El radar de estrategia del ejemplo</h2>
+<figure><img src="data:image/jpeg;base64,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" alt="Radar de estrategia de IP Score"><figcaption>Radar del bloque de estrategia del ejemplo de clase (escala 0-5).</figcaption></figure>
+<div class="tbl"><table><thead><tr><th>Factor de estrategia</th><th>Puntuación</th></tr></thead><tbody>
+<tr><td>Acuerdo de licencia o ventas</td><td>5</td></tr>
+<tr><td>Correlación patente-estrategia</td><td>4</td></tr>
+<tr><td>Parte de las principales áreas tecnológicas</td><td>4</td></tr>
+<tr><td>Garantizar libertad para operar</td><td>3</td></tr>
+<tr><td>Ganar nuevos mercados</td><td>3</td></tr>
+<tr><td>Creación de imagen</td><td>2</td></tr>
+<tr><td>Restringir el desarrollo competitivo</td><td>1</td></tr>
+<tr><td>Garantizar mercados existentes</td><td>1</td></tr></tbody></table></div>
+<p><b>Lectura:</b> la patente sirve sobre todo para <b>licenciar o vender</b> y encaja con la estrategia, pero apenas sirve para bloquear a competidores ni para defender los mercados actuales. Es un activo para monetizar, no un arma defensiva.</p>
+
+<h2 id="s4">4. Matriz de riesgo y oportunidad</h2>
+<figure><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5Ojf/2wBDAQoKCg0MDRoPDxo3JR8lNzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzf/wAARCAH8AeADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD2He/95vzo3v8A3m/Om0UAO3v/AHm/Ok3v/eb86SkoAdvf+8350b3/ALzfnTaKAHb3/vN+dG9/7zfnTaKAF3v/AH2/Oje/99vzptFADt7/AN9vzo3v/fb86bRQA7e/99vzo3v/AH2/Om0UALvf++350eY/99vzptFADvMf++350eY/99vzptFACmR/77fnR5j/AN9vzppooAd5j/32/OjzH/vt+dNpKAHeY/8Afb86PMf++3502koAf5j/AN9vzpPMf++3502igB3mP/fb86PMf++350yigB3mSf32/OjzH/vt+dNooAd5kn99v++jR5kn99v++jTKKAH+ZJ/fb/vo0nmSf32/76NMooAf5kn99v8Avo0nmyf89G/76NNpKAH+bJ/z0f8A76NJ5sn/AD0f/vo02koAf5sn/PR/++jR5sn/AD0f/vo0yigB3myf89H/AO+jR5sn/PR/++jTaSgB/myf89H/AO+jSebJ/wA9H/76NNpDQA/zZP8Ano//AH0aPNk/56P/AN9Go6KAH+bJ/wA9H/76NHmy/wDPR/8Avo1HRQA/zpf+ej/99Gjzpf8Ano//AH0ajooAf50v/PR/++jR50v/AD1f/vo1HRQA/wA6X/nq/wD30aPOl/56v/30ajooAf50v/PV/wDvo0edL/z1f/vo1HRQBJ50v/PV/wDvo0nnS/8APV/++jUdFAD/AD5f+esn/fRoM8v/AD1f/vo1HRQBq0lLSUAFFFFABRRRQAUUUlABRRRQAUUUlAC0lFFABRRSUAFFFFABRRRQAlFBooAKSiigAoopKACiikoAKKKKACkoooAKKKSgAoopKAFpKKKACiikoAKKSigAoopKACikooAKKSigApKKKACkoooAKKSigAoopKACkoooAKSikoA180lFFABRRQaADNGaSigAooooAM0UlFABRQaKACiiigBKKDRQAUUUUAJRmiigAJpM0UUAFJS0lABRRRQAUlFFABRRSUAFFFJQAUUUUAJRRRQAUUlFABRSUUAFJmiigApKKKACg0UlABRSUUAFJRRQAUlFFABSUUUAFIaKKACkopKACiikoA16KKSgBaKSigAooooAKKSigAoopKAFzSUUUAFFFFABRRSUAFFFFABSUtFACUUE0lABRRSUALSUUUAFFFFACUUE0lABRmkJooAKKKKACkoooAKKKKAEooJpKACkzSUUALRSUUAFJRRQAUlKTTaAFpKKKACkpaSgApKDRQAlGaSigAoopKACg0UlAGxSUUUAFFFJQAtFJRQAUUGkoAKKKKACkYhQWYgADJJ7Utc94+Zl8KXoBKq+xJCDjCF1DfoTQBrWOpWOoBzYXkFyEOHMMgbaffFLZ6jY3zSrZXkFwYjtkEUgbYffFcze6bbW/iuytdMhjtRd6XcRSGFQo2jbsJA9CetY8WnanpckMLWtjY3M9oNOhNo24yKDl5m4GMKDgdcmgD0SGeK4jEsEiyRt0ZDkGn1yvhfXWlaxsTpf2OxuIGbT5BMHLomAdy4+U45711VABRRRQAUhNBNJQAUUUlABRRRQAUUUUAFITQTS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KKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA5TVP+Rnn/AOvOL/0J6Sl1X/kZ5/8Arzi/9Cemk0ABNFFFABSUUhoAKKKSgDboopKACiiigAoopKACiiigAooooAKQmgmkoAB1rM+HH/IL1P8A7C93/wCh1pjrWZ8OP+QXqf8A2F7v/wBDoA6yiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAMfxR/yD4f+vuD/wBGLWxWP4o/5B8P/X3B/wCjFrYoAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA5PVv+Rnn/69Iv8A0J6Sl1b/AJGef/rzi/8AQnpKACkoooASiikoAKSiigDbooooAKKKSgBaSiigAooooAKQmgmkoAKKKSgBe9Znw4/5Bep/9he7/wDQ60h1rN+HH/IL1P8A7C93/wCh0AdZRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAGP4o/5B8P/X3B/wCjFrYrH8Uf8g+H/r7g/wDRi1sUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAcnq3/Izz/8AXnH/AOhPTadq/wDyM8//AF6R/wDoT02gApCaCaSgAopKKACkooNAG5RRRQAlFFFABRSUCgBaQmgmkoAKKKSgAooooAB1rN+HH/IL1P8A7C93/wCh1pDrWb8OP+QXqf8A2F7v/wBDoA6yiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAMfxR/yD4f+vuD/wBGLWxWP4o/5B8P/X3B/wCjFrYoAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA5LV/wDkZ5v+vOP/ANCemk07WP8AkZ5v+vOP/wBCemUAFJRRQAUlFFABSUUlAG9SUtJQAUlFFABRRSUAFFFJQAUUUUAFFFFAAOtZvw4/5Bep/wDYXu//AEOtHPNZ3w4/5Bep/wDYWu//AEOgDrKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAx/FH/IPh/6+4P/AEYtbFY/ij/kHw/9fcH/AKMWtigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigDktY/5Geb/rzj/wDQnqOn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" alt="Matriz de riesgo y oportunidad de IP Score"><figcaption>Posición de la patente del ejemplo en la matriz de riesgo y oportunidad.</figcaption></figure>
+<p>La herramienta combina las puntuaciones en dos ejes: <b>oportunidad</b> y <b>riesgo</b>. En el ejemplo la patente queda en torno al 60 % de oportunidad y al 55 % de riesgo: una oportunidad algo mayor que la media, pero con un riesgo también apreciable.</p>
+
+<h2 id="s5">5. Valoración económica</h2>
+<div class="tbl"><table><thead><tr><th>Valor actual neto (ejemplo)</th><th>Dato</th></tr></thead><tbody>
+<tr><td>Año actual</td><td>2018</td></tr>
+<tr><td>Año esperado de entrada en el mercado</td><td>2023</td></tr>
+<tr><td>Vida esperada de la tecnología en el mercado</td><td>8 años</td></tr>
+<tr><td>Ventas totales del mercado en el año actual</td><td>230.000.000</td></tr>
+<tr><td>Beneficio neto promedio del mercado</td><td>8,36 %</td></tr>
+<tr><td>Crecimiento anual del mercado</td><td>2,38 %</td></tr>
+<tr><td>Tasa de descuento («tasa libre de riesgo» en la diapositiva)</td><td>30 %</td></tr>
+<tr><td>Valor actual neto de los beneficios</td><td>6.960.666.000</td></tr></tbody></table></div>
+<p><b>Ventajas competitivas frente a una tecnología sustitutiva</b> (escala 0-5, con ponderación):</p>
+<div class="tbl"><table><thead><tr><th>Parámetro</th><th>Nuestra tecnología</th><th>Sustitutiva</th><th>Peso</th></tr></thead><tbody>
+<tr><td>Minimización de molestias</td><td>5</td><td>2</td><td>3</td></tr>
+<tr><td>Transitoriedad</td><td>4</td><td>5</td><td>2</td></tr>
+<tr><td>Precio</td><td>4</td><td>5</td><td>—</td></tr></tbody></table></div>
+<ul><li>Ventaja en parámetros técnicos: <b>82 %</b>.</li><li>Ventaja en precio: <b>−120 %</b> (es más cara).</li><li>Ventaja combinada en precio y parámetros técnicos: <b>36 %</b>.</li></ul>
+<p><b>Valor actual esperado:</b> con 320 empresas en el mercado, una cuota promedio del 0,31 % y una cuota esperada del 0,43 % gracias a la tecnología (sin ajuste adicional), el valor actual esperado es <b>8.717.000</b>.</p>
+
+<h2 id="s6">6. Utilidad para el analista</h2>
+<ul><li>Ordena la valoración: obliga a revisar factores legales, técnicos, de mercado y estratégicos, no solo el técnico.</li>
+<li>Permite <b>comparar patentes</b> entre sí (propias o de un competidor) con el mismo criterio.</li>
+<li>Es una valoración <b>subjetiva</b>: el resultado depende de quién puntúa. Conviene documentar el porqué de cada nota y que puntúen varias personas.</li></ul>
+
+<div class="note" id="acl"><h3>Aclaraciones sobre las diapositivas</h3><ul>
+<li>La diapositiva llama «tasa libre de riesgo» al 30 %. Un 30 % no es una tasa libre de riesgo (la de la deuda pública rondaba entonces el 1-2 %): es una <b>tasa de descuento ajustada al riesgo</b>, alta porque la tecnología aún no está en el mercado.</li>
+<li>El valor actual neto de los beneficios (6.960.666.000) es mayor que las ventas totales del mercado (230.000.000), y con un beneficio del 8,36 % y una tasa del 30 % no puede salir esa cifra. Probablemente hay un error de unidades o de transcripción; no conviene usar ese número como referencia.</li>
+<li>Los números 1, 2, 3 y 4 que aparecen pegados a las cifras en el original son llamadas a notas al pie, no parte del valor.</li></ul></div>
+`
 }
 ];
 
@@ -758,6 +1315,44 @@ const GLOSSARY = [
  ["Índice de Percepción de la Corrupción","Índice subjetivo de Transparency International (desde 1995), 0 = muy corrupto, 100 = muy limpio.","indi2"],
  ["ICRG","Índice de riesgo país del PRS Group (1980): riesgo político 50 %, financiero 25 %, económico 25 %; 100 = menor riesgo.","indi2"],
  ["Encuesta Mundial de Valores","World Values Survey: creencias, confianza, tolerancia y participación; fuente sobre instituciones informales.","indi2"]
+,
+ ["Propiedad industrial","Conjunto de derechos exclusivos sobre creaciones con aplicación en la industria y el comercio: patentes, modelos de utilidad, diseños, marcas, nombres comerciales, variedades vegetales.","pat1"],
+ ["Vigilancia tecnológica","Proceso sistemático de captar, analizar y difundir información de carácter tecnológico para anticiparse a cambios y tomar decisiones.","pat2"],
+ ["Inteligencia competitiva","Proceso de obtención, análisis y difusión de información sobre el entorno competitivo (competidores, mercado, clientes) para apoyar decisiones estratégicas.","pat2"],
+ ["UNE 166006","Norma española que fija los requisitos de un sistema de vigilancia e inteligencia en las organizaciones (versiones de 2011 y 2018).","pat2"],
+ ["Pirámide del conocimiento","Jerarquía dato → información → conocimiento → sabiduría: cada nivel añade contexto y capacidad de decidir.","pat2"],
+ ["Gestión del conocimiento","Conjunto de prácticas para identificar, conservar, compartir y aprovechar el conocimiento de una organización.","pat2"],
+ ["Minería de datos","Técnicas para descubrir patrones, relaciones y tendencias en grandes volúmenes de datos.","pat2"],
+ ["Activo intangible","Recurso inmaterial con valor económico porque da ventaja en el mercado: marcas, patentes, software, secretos, reputación, dominios…","pat4"],
+ ["Patente","Título que el Estado concede al titular de una invención: monopolio territorial de explotación durante 20 años a cambio de divulgarla.","pat5"],
+ ["Modelo de utilidad","Protección para invenciones que dan a un objeto una configuración o estructura con ventaja práctica; dura 10 años; no cubre procedimientos ni fármacos.","pat5"],
+ ["Diseño industrial","Derecho sobre la apariencia externa de un producto; 5 años renovables hasta 25.","pat4"],
+ ["Marca","Signo que distingue productos o servicios en el mercado; 10 años renovables indefinidamente.","pat4"],
+ ["Secreto comercial","Información valiosa no conocida por el público que se protege manteniéndola en secreto, sin registro.","pat4"],
+ ["Variedad vegetal (obtención)","Derecho sobre una variedad nueva, distinta, homogénea y estable; 25 o 30 años.","pat4"],
+ ["Novedad","Requisito de patentabilidad: la invención no está comprendida en el estado de la técnica.","pat5"],
+ ["Actividad inventiva","Requisito de patentabilidad: la invención no resulta obvia para un experto en la materia.","pat5"],
+ ["Aplicación industrial","Requisito de patentabilidad: la invención puede fabricarse o usarse en cualquier industria.","pat5"],
+ ["Estado de la técnica","Todo lo accesible al público antes de la fecha de solicitud (publicaciones, tesis, congresos, prensa, uso). Contra él se mide la novedad.","pat5"],
+ ["Reivindicaciones","Parte de la patente que define exactamente qué queda protegido.","pat5"],
+ ["CIP / IPC","Clasificación Internacional de Patentes: código jerárquico (p. ej. B01J 23/00) que agrupa las patentes por campo técnico.","pat5"],
+ ["Código de tipo (kind code)","Letra y número tras el número de publicación que indican la fase: A solicitud, B1 concesión sin examen, B2 con examen, U/Y/Z modelos.","pat5"],
+ ["IET","Informe sobre el Estado de la Técnica que emite la oficina con las anterioridades relevantes.","pat5"],
+ ["Fecha de prioridad","Fecha de la primera solicitud; durante 12 meses se puede extender a otros países conservándola.","pat5"],
+ ["PCT","Tratado de Cooperación en materia de Patentes (OMPI): vía para solicitar protección en muchos países con una sola solicitud.","pat5"],
+ ["Patente europea (EP)","Solicitud ante la Oficina Europea de Patentes; tras la concesión se valida país por país.","pat5"],
+ ["Licencia obligatoria","Licencia no exclusiva impuesta por falta de explotación, interés público o dependencia entre patentes.","pat5"],
+ ["CCP","Certificado Complementario de Protección: hasta 5 años más de protección para medicamentos y fitosanitarios.","pat5"],
+ ["Cláusula Bolar","Excepción que permite los estudios y ensayos necesarios para autorizar un medicamento genérico sin infringir la patente.","pat5"],
+ ["Agotamiento del derecho","El titular no puede controlar la reventa de un producto que él (o con su consentimiento) ya comercializó en la UE.","pat5"],
+ ["Invención implementada en ordenador","Software patentable porque produce un efecto técnico adicional; el programa como tal no es patentable.","pat5"],
+ ["FTO (Freedom to Operate)","Informe de libertad de operación: comprueba que un producto puede explotarse sin infringir derechos de terceros.","pat4"],
+ ["Datos bibliográficos","Metadatos de una patente (título, inventor, titular, fechas, países, prioridad, citas, CIP) que se agregan como indicadores.","pat6"],
+ ["Marketplace tecnológico","Plataforma en línea de compraventa y licencia de tecnología y patentes.","pat6"],
+ ["Brokerage de patentes","Intermediación profesional en la compraventa o licencia de patentes.","pat6"],
+ ["Búsqueda de ego","Seguimiento de lo que se publica sobre una persona u organización buscando su propio nombre, normalmente con alertas o RSS.","pat7"],
+ ["IP Score","Herramienta de la EPO para valorar patentes puntuando factores legales, tecnológicos, de mercado y estratégicos.","pat9"],
+ ["Valor actual neto (VAN)","Suma de los flujos futuros descontados a hoy con una tasa que refleja el riesgo y el valor del tiempo.","pat9"]
 ].map(([t,d,src])=>({t,d,src}));
 
 const QUESTIONS = [
@@ -802,7 +1397,40 @@ const QUESTIONS = [
  {id:"i2q9",src:"indi2",q:"¿Qué seis indicadores componen los WGI del Banco Mundial?",a:"Voz y rendición de cuentas; estabilidad política y ausencia de violencia; eficacia del gobierno; calidad regulatoria; Estado de derecho; control de la corrupción."},
  {id:"i2q10",src:"indi2",q:"Describe el Índice de Percepción de la Corrupción y su principal limitación.",a:"Transparency International, desde 1995, escala 0 (muy corrupto) a 100 (muy limpio), basado en encuestas a analistas y empresas. Limitación: depende de percepciones."},
  {id:"i2q11",src:"indi2",q:"¿Cómo se construye el índice de riesgo país del ICRG?",a:"PRS Group, desde 1980: riesgo político 50 % (expertos), financiero 25 % y económico 25 % (datos objetivos). Escala 0–100, 100 = menor riesgo."},
- {id:"i2q12",src:"indi2",q:"Asocia cada índice con su problema principal.",a:"Doing Business: manipulación de datos. Competitividad Global: cuestionamiento metodológico. Libertad Económica: sesgo ideológico. Percepción de la Corrupción: dependencia de percepciones. WGI: agregación de fuentes subjetivas."}
+ {id:"i2q12",src:"indi2",q:"Asocia cada índice con su problema principal.",a:"Doing Business: manipulación de datos. Competitividad Global: cuestionamiento metodológico. Libertad Económica: sesgo ideológico. Percepción de la Corrupción: dependencia de percepciones. WGI: agregación de fuentes subjetivas."},
+ {id:"p1q1",src:"pat1",exam:true,q:"¿Por qué la propiedad industrial es una fuente de inteligencia y qué tres condiciones exige el profesor a la obtención?",a:"Porque el titular debe describir la invención para obtener el monopolio, y las oficinas lo publican: revela qué investiga cada empresa, quién inventa, con quién coopera y dónde quiere vender. Condiciones: información de todo tipo de territorio, lícita y de fuentes oficiales, y contrastada."},
+ {id:"p1q2",src:"pat1",q:"Enumera los derechos de propiedad industrial e intelectual vistos en la asignatura.",a:"Patentes y modelos de utilidad, diseños, marcas y nombres de dominio, copyright, variedades vegetales y secretos comerciales."},
+ {id:"p1q3",src:"pat1",q:"Clasifica la inteligencia según el nivel de decisión y según la necesidad de información.",a:"Nivel de decisión: estratégica (política general), operativa (ejecución), táctica (acciones concretas) y prospectiva (anticipación). Necesidad de información: básica, actual y crítica."},
+ {id:"p2q1",src:"pat2",exam:true,q:"Diferencia vigilancia tecnológica e inteligencia competitiva.",a:"La vigilancia capta y analiza información (sobre todo tecnológica) del entorno de forma sistemática; la inteligencia competitiva añade el análisis orientado a la decisión estratégica sobre competidores y mercado. La norma UNE 166006 regula ambas."},
+ {id:"p2q2",src:"pat2",q:"Explica la pirámide del conocimiento.",a:"Datos (hechos sin contexto) → información (datos con contexto) → conocimiento (información interpretada y aplicable) → sabiduría o inteligencia (capacidad de decidir)."},
+ {id:"p2q3",src:"pat2",q:"Diferencia IA débil (estrecha) e IA general.",a:"La débil resuelve tareas concretas (clasificar, traducir, generar texto); la general (AGI) igualaría la capacidad humana en cualquier tarea intelectual y aún no existe."},
+ {id:"p2q4",src:"pat2",q:"¿Qué aportan la prospectiva y los escenarios al análisis de tecnología?",a:"Permiten anticipar futuros posibles de evolución de una tecnología o mercado y preparar decisiones para cada uno, en vez de extrapolar solo el presente."},
+ {id:"p3q1",src:"pat3",q:"¿Qué diferencia hay entre dato e información?",a:"El dato es un hecho aislado sin contexto; la información es el dato interpretado en un contexto que le da significado para quien lo recibe."},
+ {id:"p3q2",src:"pat3",q:"Enumera los tipos de información útiles para la vigilancia tecnológica.",a:"Patentes; otras formas de propiedad industrial (marcas, diseños, propiedad intelectual, software); proyectos europeos; monografías, artículos, tesis y conferencias; información de mercado; estadística; normativa y legislación."},
+ {id:"p3q3",src:"pat3",q:"¿Qué se puede extraer de esa información?",a:"Tecnologías emergentes y en declive, transferencias tecnológicas, qué hace la competencia y con quién coopera, investigadores clave, evolución de la I+D, mercados, nichos y países líderes."},
+ {id:"p4q1",src:"pat4",exam:true,q:"Completa la tabla: derecho, qué protege y duración.",a:"Patente: invenciones, 20 años (modelo de utilidad, 10). Diseño: apariencia, 5 años renovable hasta 25. Marca: signo distintivo, 10 años renovable. Copyright: obras, 70 años (post mortem). Variedades: 25-30 años. Secreto: mientras no se revele."},
+ {id:"p4q2",src:"pat4",q:"¿Qué preguntas hay que hacerse antes de proteger?",a:"Qué se va a proteger, para qué (objetivo), con qué recursos y qué hace falta realmente."},
+ {id:"p4q3",src:"pat4",q:"¿Qué es un informe FTO y cuándo se hace?",a:"Freedom to Operate: comprueba que un producto o proceso puede explotarse sin infringir patentes de terceros. Se hace antes de lanzar el producto o de invertir en su desarrollo."},
+ {id:"p4q4",src:"pat4",q:"¿En qué se diferencia el secreto comercial del resto de derechos?",a:"Los demás se obtienen revelando la creación o pagando una tasa a cambio de un derecho exclusivo; el secreto se protege precisamente no revelándolo, y dura mientras se mantenga."},
+ {id:"p5q1",src:"pat5",exam:true,q:"¿Cuáles son los requisitos de patentabilidad?",a:"Novedad, actividad inventiva y aplicación industrial, más suficiencia descriptiva."},
+ {id:"p5q2",src:"pat5",exam:true,q:"¿Por qué la máquina de salchichas (picadora + rellenadora) no es patentable y el analgésico + tranquilizante sí puede serlo?",a:"Ambas son nuevas, pero la máquina es una mera yuxtaposición con el efecto esperado (sin actividad inventiva); la composición produce un efecto sinérgico inesperado, lo que sí supone actividad inventiva."},
+ {id:"p5q3",src:"pat5",q:"Interpreta ES 0359879 B1.",a:"Patente española (ES), número de publicación 0359879, concedida sin examen previo (B1). B2 sería con examen; A, la solicitud; U, Y o Z, modelo de utilidad."},
+ {id:"p5q4",src:"pat5",exam:true,q:"Explica el derecho de prioridad con un ejemplo.",a:"Durante 12 meses desde la primera solicitud se puede solicitar en otros países y se considera presentada en la fecha de la primera. Solicitud ES el 01/01/2017, extensión el 01/01/2018: fecha efectiva 01/01/2017 en todos."},
+ {id:"p5q5",src:"pat5",q:"¿Qué es un CCP y cómo se calcula su duración?",a:"Certificado Complementario de Protección para medicamentos y fitosanitarios. Duración = (fecha de primera autorización − fecha de solicitud) − 5 años, con un máximo de 5 años."},
+ {id:"p5q6",src:"pat5",q:"Enumera las excepciones a los derechos del titular.",a:"Uso experimental, cláusula Bolar, preparación de fórmulas magistrales en farmacias y agotamiento del derecho."},
+ {id:"p5q7",src:"pat5",q:"¿Es patentable el software?",a:"No como tal (art. 52 del Convenio sobre la Patente Europea), pero sí una invención implementada en ordenador que produzca un efecto técnico adicional."},
+ {id:"p5q8",src:"pat5",q:"¿Cuándo puede pedirse una licencia obligatoria por falta de explotación?",a:"Si el titular no explota la invención lo suficiente para abastecer el mercado en 4 años desde la solicitud o 3 desde la concesión."},
+ {id:"p6q1",src:"pat6",exam:true,q:"¿Qué datos bibliográficos de una patente sirven como indicadores y qué revela cada uno?",a:"CIP/título: área tecnológica. Inventor: equipos clave. Titular: competidores. Fechas: tendencia. Países designados: mercados objetivo. Prioridad: origen. Citas: relevancia."},
+ {id:"p6q2",src:"pat6",q:"¿Por qué los dos últimos años de un gráfico de solicitudes de patente parecen caer?",a:"Porque las solicitudes se publican a los 18 meses de la prioridad: los datos recientes aún no están publicados."},
+ {id:"p6q3",src:"pat6",q:"¿Qué es un marketplace tecnológico y qué interés tiene para el analista?",a:"Plataforma de compraventa y licencia de tecnología. Lo que una empresa ofrece o busca revela su estrategia: qué abandona y qué necesita."},
+ {id:"p7q1",src:"pat7",q:"Cita fuentes para literatura científica, tesis y proyectos financiados.",a:"Artículos: Dialnet, SciELO, Redalyc, ScienceDirect, CiteSeerX. Tesis: TESEO. Proyectos: CDTI y Comisión Europea."},
+ {id:"p7q2",src:"pat7",q:"¿Cómo se combinarían varias fuentes para seguir a un competidor?",a:"Patentes (qué protege), proyectos (qué investiga), tesis y artículos (quién investiga), LinkedIn (fichajes), noticias (movimientos), web y publicidad (cómo vende)."},
+ {id:"p7q3",src:"pat7",q:"¿Qué herramientas de la lista de clase ya no funcionan?",a:"123people (2014), Sputnik (2020), el operador link: de Google (2017), linkdomain: de Yahoo y Moat (2024)."},
+ {id:"p8q1",src:"pat8",q:"¿Qué riesgo concreto tiene usar IA externa con una invención no patentada?",a:"Subirla a un servicio externo puede suponer una divulgación que comprometa la novedad y la confidencialidad."},
+ {id:"p8q2",src:"pat8",q:"Clasifica: Perplexity, SciSpace, Fireflies.ai, Pictory.",a:"Perplexity: búsqueda con fuentes. SciSpace: artículos científicos. Fireflies.ai: transcripción de reuniones. Pictory: texto a vídeo."},
+ {id:"p9q1",src:"pat9",exam:true,q:"¿Qué es IP Score y qué bloques valora?",a:"Herramienta de la EPO para valorar patentes. Bloques: estado legal, tecnología, condiciones de mercado y estrategia, cada factor de 0 a 5."},
+ {id:"p9q2",src:"pat9",q:"Interpreta el radar de estrategia del ejemplo.",a:"Altas puntuaciones en licencia/venta (5) y correlación con la estrategia (4); bajas en restringir competidores y garantizar mercados existentes (1). Es un activo para monetizar, no defensivo."},
+ {id:"p9q3",src:"pat9",q:"¿Qué falla en la tabla de VAN del ejemplo?",a:"Llama tasa libre de riesgo a un 30 %, que en realidad es una tasa ajustada al riesgo; y el VAN de beneficios (6.960 millones) supera las ventas totales del mercado (230 millones), lo que es incoherente."}
 ];
 
 const READINGS = [
@@ -813,7 +1441,13 @@ const READINGS = [
  {id:"r5",s:"indi",title:"Por qué fracasan los países",author:"Daron Acemoglu y James A. Robinson (2012)",origin:"Recomendada"},
  {id:"r6",s:"indi",title:"Instituciones, cambio institucional y desempeño económico",author:"Douglass C. North (1990)",origin:"Recomendada"},
  {id:"r7",s:"indi",title:"Instituciones y Economía",author:"Sebastián, Serrano, Roca y Osés (Fundación Ramón Areces, 2008)",origin:"Citada en clase"},
- {id:"r8",s:"indi",title:"La primacía de las instituciones",author:"Dani Rodrik y Arvind Subramanian (Finanzas y Desarrollo, FMI, 2003)",origin:"Citada en clase"}
+ {id:"r8",s:"indi",title:"La primacía de las instituciones",author:"Dani Rodrik y Arvind Subramanian (Finanzas y Desarrollo, FMI, 2003)",origin:"Citada en clase"},
+ {id:"r9",s:"pate",title:"UNE 166006: Gestión de la I+D+i. Sistema de vigilancia e inteligencia",author:"Asociación Española de Normalización (UNE)",origin:"Citada en clase"},
+ {id:"r10",s:"pate",title:"Ley 24/2015, de 24 de julio, de Patentes",author:"BOE",origin:"Normativa"},
+ {id:"r11",s:"pate",title:"Convenio sobre la Patente Europea (art. 52, materia patentable)",author:"Oficina Europea de Patentes",origin:"Citada en clase"},
+ {id:"r12",s:"pate",title:"Reglamento (CE) 469/2009, certificado complementario de protección para medicamentos",author:"Unión Europea",origin:"Citada en clase"},
+ {id:"r13",s:"pate",title:"El shock del futuro",author:"Alvin Toffler (1970)",origin:"Citada en clase"},
+ {id:"r14",s:"pate",title:"Mega guía de herramientas de inteligencia artificial gratuitas",author:"Xataka",origin:"Citada en clase"}
 ];
 
 /* =========================================================
@@ -951,16 +1585,27 @@ function sessBtn(x){const s=subj(x.s);return `<button class="sess" data-session=
 
 function vTemario(){
   if(openSession) return vSession(sess(openSession));
-  const block=c=>SUBJECTS.filter(s=>s.c===c).map(s=>{
-    const list=SESSIONS.filter(x=>x.s===s.id).sort((a,b)=>a.date.localeCompare(b.date));
+  const lst=id=>SESSIONS.filter(x=>x.s===id).sort((a,b)=>a.date.localeCompare(b.date));
+  const sl=list=>list.length?`<div class="sessions">${list.map(x=>`<button class="sess" data-session="${x.id}"><span class="d">${fmtDate(x.date)}</span><span class="t">${esc(x.title)}</span></button>`).join("")}</div>`:`<p class="empty">Aún sin clases.</p>`;
+  const group=(g,mods)=>{const n=mods.reduce((a,m)=>a+lst(m.id).length,0);
+    return `<section class="panel subj" style="--phc:var(--ink)">
+      <div class="meta"><span class="eyebrow">● ${mods.length} módulos</span><span>${n} ${n===1?"clase":"clases"}</span></div>
+      <h3>${esc(g)}</h3>
+      ${mods.map(m=>{const ph=PHASES[m.phase],l=lst(m.id);return `<div class="mod" style="--phc:${ph.color}">
+        <div class="meta"><span class="eyebrow" style="color:${ph.color}">● ${esc(m.mod)} · ${ph.name}</span><span>${l.length} ${l.length===1?"clase":"clases"}</span></div>
+        <h4>${esc(m.name)}</h4>${sl(l)}</div>`;}).join("")}
+    </section>`;};
+  const block=c=>{const subs=SUBJECTS.filter(s=>s.c===c),seen=new Set();return subs.map(s=>{
+    if(s.grp){if(seen.has(s.grp))return "";seen.add(s.grp);return group(s.grp,subs.filter(m=>m.grp===s.grp));}
+    const list=lst(s.id);
     const ph=PHASES[s.phase];
     return `<section class="panel subj" style="--phc:${ph.color}">
       <div class="meta"><span class="eyebrow" style="color:${ph.color}">● ${ph.name}</span><span>${list.length} ${list.length===1?"clase":"clases"}</span></div>
       <h3>${esc(s.name)}</h3>
       ${list.length?`<div class="sessions">${list.map(x=>`<button class="sess" data-session="${x.id}"><span class="d">${fmtDate(x.date)}</span><span class="t">${esc(x.title)}</span></button>`).join("")}</div>`:`<p class="empty">Aún sin clases.</p>`}
-    </section>`;}).join("");
+    </section>`;}).join("");};
   return `<h1 class="view">Temario</h1>
-  <p class="lede">Cada asignatura se corresponde con una fase del ciclo de inteligencia; Fundamentos e Inteligencia económica lo recorren entero, e Indicadores aporta la inteligencia básica (fichas país) de la que parte el análisis.</p>
+  <p class="lede">Cada asignatura (o módulo) se corresponde con una fase del ciclo de inteligencia. Fundamentos de Inteligencia agrupa cinco módulos; Indicadores aporta la inteligencia básica (fichas país) de la que parte el análisis.</p>
   <div class="cycle"><div style="background:var(--ph-dir)"></div><div style="background:var(--ph-obt)"></div><div style="background:var(--ph-ela)"></div><div style="background:var(--ph-dif)"></div></div>
   <div class="phaserow"><span>Dirección</span><span>Obtención</span><span>Elaboración</span><span>Difusión</span></div>
   <h2 class="sec">Primer cuatrimestre</h2><div class="stack">${block(1)}</div>
@@ -971,7 +1616,7 @@ function vSession(x){
   const qs=QUESTIONS.filter(q=>q.src===x.id);
   const heads=[...x.body.matchAll(/<h2 id="(s\d+)">([^<]+)<\/h2>/g)].map(m=>[m[1],m[2].replace(/^\d+\.\s*/,"")]);
   return `<button class="back" data-back>← Temario</button>
-  <div class="eyebrow">${esc(s.name)} · ${fmtDate(x.date)} 2026</div>
+  <div class="eyebrow">${esc(s.grp?s.grp.split(" ")[0]+" · "+s.mod+" · "+s.short:s.name)} · ${fmtDate(x.date)} 2026</div>
   <h1 class="view" style="margin-top:6px">${esc(x.title)}</h1>
   <p class="lede" style="font-family:var(--f-body);font-size:17px">${x.summary}</p>
   <div class="article">
@@ -1184,5 +1829,4 @@ render();
 initSync();
 </script>
 
-</body>
-</html>
+</body></html>
